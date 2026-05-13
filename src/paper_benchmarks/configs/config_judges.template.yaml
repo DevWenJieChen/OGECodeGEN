@@ -1,0 +1,7 @@
+llm:
+  provider: dashscope
+  model: qwen3-max
+  temperature: 0.2
+  timeout_s: 120
+  api_key: sk-xxx
+  base_url: https://xxxxxxxx

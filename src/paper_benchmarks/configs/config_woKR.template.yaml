@@ -1,0 +1,55 @@
+llm:
+  provider: dashscope
+  model: deepseek-v3.2
+  temperature: 0.2
+  timeout_s: 300
+  api_key: sk-xxx
+  base_url: https://xxxxxxxxxx
+
+llm_predata:
+  provider: openai_compatible
+  model: gpt-5.2
+  temperature: 0.3
+  timeout_s: 120
+  api_key: sk-xxxx
+  base_url: https://xxxxxxxxxx
+
+embedding:
+  provider: openai_compatible
+  model: text-embedding-v4         # 模型名字
+  api_key: sk-xxxxx
+  base_url: https://xxxxxxxxxx
+  timeout_s: 120
+
+modules:
+  intent: true
+  retrieval_data: true
+  retrieval_knowledge: false
+  codegen: true
+  verify_execute: true
+
+
+controller: # Configuration for the ReAct workflow controller
+  max_iters: 3 # Maximum number of ReAct iterations (to avoid infinite loops)
+  repeat_error_limit: 2 # Stop when the same error repeats up to the threshold (to avoid the model getting stuck on the same error)
+  auto_verify_after_codegen: True # Force a verify step after each codegen; default is True for more stable closed-loop execution
+
+retrieval: # Configuration related to data and knowledge retrieval
+  top_k: 5
+  product_similarity_min: 80 # Similarity matching threshold for data retrieval
+  dim: 1024 # Vector dimension; do not set arbitrarily, it must match what the embedding model supports
+
+amap: # Configuration related to AMap
+  api_key: xxxxxxxx
+
+milvus:
+  host: https://xxxxxxxx
+  port: 19530
+  token: "xxxxxxxx"
+  database: ""
+  dynamic_field: False
+  index:
+    index_type: "AUTOINDEX"
+    metric_type: "IP" # IP: inner product, COSINE: cosine similarity, L2: Euclidean distance; when vectors are normalized, IP = COSINE
+  collection_operators: operator_knowledge # Name of the operator collection in the vector database
+  collection_tasks: tasks_knowledge # Name of the remote sensing task collection in the vector database

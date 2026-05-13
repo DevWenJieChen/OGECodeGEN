@@ -1,0 +1,10 @@
+llm:
+  provider: dashscope
+  model: deepseek-v3.2
+  temperature: 0.2
+  timeout_s: 300
+  api_key: sk-xxx
+  base_url: https://xxxxxxxx
+
+max_fix_num: 3
+

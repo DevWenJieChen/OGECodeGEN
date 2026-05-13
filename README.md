@@ -1,8 +1,8 @@
 # 🌍 OGECodeGEN
 
-**OGECodeGEN** is a retrieval-augmented code generation framework for the **Open Geospatial Engine (OGE)** platform. It converts natural-language geospatial analysis requests into OGE Python code by coordinating intent understanding, data recommendation, task/operator knowledge retrieval, code generation, platform-level verification, and ReAct-style code repair.
+**OGECodeGEN** is a domain knowledge-grounded geospatial code generation framework for the **Open Geospatial Engine (OGE)** platform. It converts natural-language geospatial analysis requests into OGE Python code by coordinating intent understanding, spatiotemporal datasource acquisition, modeling knowledge retrieval, code generation, platform-level verification, and ReAct-guided feedback correction.
 
-The project is designed for research on geospatial code generation, remote-sensing workflow automation, and LLM-assisted programming for the OGE platform.
+The project is designed for research on platform-constrained geospatial code generation, remote-sensing workflow automation, and LLM-assisted programming for less-documented or customized geospatial computing platforms.
 
 ---
 
@@ -10,14 +10,15 @@ The project is designed for research on geospatial code generation, remote-sensi
 
 OGECodeGEN addresses a practical challenge in geospatial programming: users often describe an analytical goal in natural language, while the OGE platform requires precise API calls, valid data products, correct operator parameters, and a coherent computational workflow.
 
-The framework follows a modular pipeline:
+The framework follows a five-component pipeline coordinated by a ReAct-style feedback mechanism:
 
 1. **Intent Understanding** extracts structured task semantics from the user request.
-2. **Data Retrieval** recommends suitable OGE data products and data references.
-3. **Knowledge Retrieval** retrieves relevant task knowledge and operator knowledge from Milvus.
+2. **Spatiotemporal Datasource Acquisition** selects suitable OGE data products and summarizes data access context.
+3. **Modeling Knowledge Retrieval** retrieves task-level and operator-level knowledge to support workflow planning and operator selection.
 4. **Code Generation** produces OGE Python code using platform syntax rules and retrieved context.
-5. **Code Verification** checks generated code with platform-oriented validation and DAG extraction.
-6. **ReAct Repair** revises failed code using verification feedback and updated retrieval context.
+5. **Code Verification** checks generated code through platform-oriented validation and DAG-based structural checking.
+
+When verification fails, the ReAct-style feedback mechanism treats the verification result as an observation, reasons about the failure causes, and triggers actions such as data or knowledge re-retrieval and targeted code revision via the Repair mode.
 
 ![overall_architecture_OGECodeGEN.png](images/overall_architecture_OGECodeGEN.png)
 > The overall architecture of the OGECodeGEN
@@ -55,14 +56,14 @@ The evaluation benchmark contains **147 OGE task samples**. Each sample includes
 
 The benchmark covers five representative categories of geospatial computing tasks and three difficulty levels.
 
-| Task Category               |   Easy | Medium |   Hard |   Total |
-| --------------------------- | -----: | -----: | -----: | ------: |
-| Image Processing            |     10 |     11 |      0 |      21 |
-| Quantitative Remote Sensing |     24 |     17 |     10 |      51 |
-| Spatiotemporal Statistics   |     11 |      9 |      3 |      23 |
-| Terrain Analysis            |     10 |      6 |     10 |      26 |
-| Spatial Analysis            |      6 |      7 |     13 |      26 |
-| **Total**                   | **61** | **50** | **36** | **147** |
+| Task Category               |   Easy | Moderate |   Hard |   Total |
+| --------------------------- | -----: |---------:| -----: | ------: |
+| Image Processing            |     10 |       11 |      0 |      21 |
+| Quantitative Remote Sensing |     24 |       17 |     10 |      51 |
+| Spatiotemporal Statistics   |     11 |        9 |      3 |      23 |
+| Terrain Analysis            |     10 |        6 |     10 |      26 |
+| Spatial Analysis            |      6 |        7 |     13 |      26 |
+| **Total**                   | **61** |   **50** | **36** | **147** |
 
 The difficulty level considers the number of core analytical steps, the number of task objects, workflow complexity, and parameter-constraint complexity.
 
@@ -72,14 +73,14 @@ The difficulty level considers the number of core analytical steps, the number o
 
 The benchmark uses both code-level and workflow-level metrics:
 
-| Metric            | Description                                                  |
-| ----------------- | ------------------------------------------------------------ |
-| **Executability** | Verifiable executability based on OGE platform-oriented validation. It is not a full physical execution success rate. |
-| **NMR**           | Node matching ratio between generated and reference DAGs.    |
-| **EMR**           | Edge matching ratio between generated and reference DAGs.    |
-| **TS**            | Topological similarity between generated and reference workflows. |
-| **Correctness**   | Semantic quality judged by task fulfillment, data usage, parameter validity, output quality, and result plausibility. |
-| **debugging@k**   | Verifiable executability after at most `k` repair iterations. |
+| Metric | Description |
+| --- | --- |
+| **Executability** | Verifiable executability based on OGE platform-oriented validation. It is not a full runtime execution success rate. |
+| **NMR** | Node Matching Rate between generated and reference DAGs. |
+| **EMR** | Edge Matching Rate between generated and reference DAGs. |
+| **TSim** | Topological Similarity between generated and reference workflows. |
+| **Semantic Correctness** | Task-level semantic quality judged by task fulfillment, data usage, parameter validity, output quality, and result plausibility. |
+| **debugging@k** | Verifiable executability after at most `k` debugging iterations; in the paper setting, debugging@3 equals final Executability. |
 
 ---
 
@@ -92,7 +93,7 @@ OGECodeGEN is compared with three baselines or ablations:
 - **woKR**: without knowledge retrieval.
 - **IOP**: input-output prompting using OGE syntax and I/O specifications only.
 
-Overall, the full framework consistently outperforms **IOP** and **woKR** in structural consistency and semantic correctness. The intent-understanding module is most useful for tasks with richer constraints and longer processing chains, while simple tasks may already be sufficiently specified by the original query.
+Overall, the full framework consistently outperforms **IOP** and **woKR** in verifiable executability, structural consistency, and semantic correctness. The intent-understanding module is most useful for tasks with richer constraints and longer processing chains, while simple tasks may already be sufficiently specified by the original query.
 
 Selected overall results for a subset of evaluated models are shown below. The complete results across all models, settings, and difficulty levels are provided in the paper appendix.
 
@@ -280,8 +281,8 @@ If you use OGECodeGEN in academic work, please cite the corresponding paper once
 ```bibtex
 @article{ogecodegen2026,
   title   = {OGECodeGEN: a domain knowledge-grounded framework for automatic geospatial code generation on the Open Geospatial Engine},
-  author  = {To be added},
-  journal = {To be added},
+  author  = {Wenjie Chen, Jianyuan Liang*, Longgang Xiang, Huayi Wu},
+  journal = {Manuscript under review},
   year    = {2026}
 }
 ```

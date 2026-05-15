@@ -27,6 +27,33 @@ When verification fails, the ReAct-style feedback mechanism treats the verificat
 > Component coordination in OGECodeGEN
 
 ---
+## 🎬 Demo Examples
+
+The following GIFs provide lightweight previews of OGECodeGEN in typical geospatial code generation scenarios. Full MP4 demo videos with the same filenames are available in the `demo_video/` directory.
+
+### Example 1: Land Surface Temperature Mapping
+
+This example demonstrates how OGECodeGEN generates OGE code for examining land surface thermal conditions in Wuhan using a Landsat 9 image from early March 2023. The task includes extracting the main land surface temperature layer, generating an intuitive temperature distribution map, and displaying relatively hotter and cooler areas.
+
+<img src="images/Example_land_surface_temperature.gif" width="800">
+
+Full video: [`demo_video/Example_land_surface_temperature.mp4`](demo_video/Example_land_surface_temperature.mp4)
+
+### Example 2: Road and Transportation Facility Extraction from Vector Data
+
+This example shows a vector-based spatial extraction task using user-uploaded road and transportation facility datasets for Wuhan in 2023. OGECodeGEN generates code to construct a specified analysis area, extract roads and transportation facilities within the area, and visualize the analysis area together with the extracted vector features.
+
+<img src="images/Example_road_facility_extraction.gif" width="800">
+
+Full video: [`demo_video/Example_road_facility_extraction.mp4`](demo_video/Example_road_facility_extraction.mp4)
+
+### Example 3: Urban Construction Land Mapping
+
+This example demonstrates urban construction land mapping in Wuhan using a Landsat 8 image from early October 2015. The task combines shortwave infrared, red, near-infrared, and blue bands to calculate a built-up area enhancement index, highlighting potential built-up areas and impervious surfaces.
+
+<img src="images/Example_urban_distribution.gif" width="800">
+
+Full video: [`demo_video/Example_urban_distribution.mp4`](demo_video/Example_urban_distribution.mp4)
 
 ## 📂 Repository Structure
 
@@ -42,6 +69,8 @@ OGECodeGEN/
 │   ├── tools/              # Config, model clients, Milvus store, prompt loader, and DAG utilities
 │   ├── paper_benchmarks/   # Benchmark running, evaluation, and correctness judging scripts
 │   └── service.py          # FastAPI service entry with SSE support
+├── images/                 # Figures and GIF previews used in README and documentation
+├── demo_video/             # Full MP4 demo videos corresponding to the GIF previews
 ├── config.template.yaml    # Main configuration template
 ├── requirements.txt        # Python dependencies
 ├── oge-2.1.3-py3-none-any.whl

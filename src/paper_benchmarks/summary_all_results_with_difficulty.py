@@ -398,7 +398,7 @@ def main():
     summary_by_case_path = r"benchmarks_results/"+dir_base+"/correctness_judgements/summary_by_case_gpt55.jsonl"
     metrics_summary_path = r"benchmarks_results/"+dir_base+"/metrics_summary.json"
     metrics_by_case_csv_path = r"benchmarks_results/"+dir_base+"/metrics_by_case.csv"
-    benchmark_meta_path = "data_json/benchmark_with_dag_rebalanced_v4.json"
+    benchmark_meta_path = "data_json/benchmark_with_dag_rebalanced.json"
 
     # If None, overwrite the original file; you can also set a new filename
     metrics_summary_output = None

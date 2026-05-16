@@ -16,7 +16,7 @@ RUN_DIR = Path("benchmarks_results/20260428_022501_llama-3.3-70b-instruct")  # T
 EXPERIMENTS = ["OURS", "woIU", "woKR", "IOP"]          # TODO: Adjust as needed
 OUT_SUMMARY_JSON = "metrics_summary.json"
 OUT_CASE_CSV = "metrics_by_case.csv"
-BENCHMARK_META_PATH = Path("data_json/benchmark_with_dag_rebalanced_v4.json")
+BENCHMARK_META_PATH = Path("data_json/benchmark_with_dag_rebalanced.json")
 
 EXPORT_DOT = True
 DOT_DIRNAME = "graphs_dot"

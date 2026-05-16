@@ -2,80 +2,83 @@
   {
     "product_id": 453,
     "name": "LC08_C02_L1",
-    "alias": "Landsat 8 Collection 2 Level-1 产品（2023年时相）",
-    "time_range": ["2023-01-01 00:00:00", "2023-12-31 23:59:59"],
-    "type": "观测型多波段光学影像产品：以 Landsat 8 OLI/TIRS 的观测影像为主体，属于 Collection 2 的 Level-1 级数据，已完成辐射定标与几何/地形相关的基础校正，适合作为变化检测、制图与时间序列分析的基础输入。",
+    "alias": "Landsat 8 Collection 2 Level-1 product (2023 acquisition period)",
+    "time_range": [
+      "2023-01-01 00:00:00",
+      "2023-12-31 23:59:59"
+    ],
+    "type": "Observation-oriented multispectral optical imagery product: based on Landsat 8 OLI/TIRS observations, belonging to the Collection 2 Level-1 product family. It has undergone radiometric calibration and basic geometric/terrain-related correction, making it suitable as baseline input for change detection, mapping, and time-series analysis.",
     "platform": "Landsat 8",
-    "sensor": "OLI/TIRS 光学传感器",
+    "sensor": "OLI/TIRS optical sensor",
     "source": "USGS",
     "spatial_extent": {
-      "desc": "全国（中国范围）",
+      "desc": "Nationwide China",
       "min_lon": 66.7593386684,
       "max_lon": 136.8947745217,
       "min_lat": 0.3927804961,
       "max_lat": 55.6305644605
     },
-    "data_overview": "数据年份：2023年；覆盖范围：全国（中国范围）；更新频率：约5天；影像数量：17601景；数据量约38559.11 GB；像元类型：uint16。",
+    "data_overview": "Data year: 2023; coverage: nationwide China; update frequency: about 5 days; number of scenes: 17,601; data volume: about 38,559.11 GB; pixel type: uint16.",
     "bands": [
       {
         "id": "B1",
         "resolution": "30m",
-        "semantic": "沿海/气溶胶（Coastal/Aerosol），波段范围约 0.43–0.45 μm；常用于海岸带、水体穿透与大气气溶胶相关分析。"
+        "semantic": "Coastal/Aerosol band, approximately 0.43–0.45 μm; commonly used for coastal-zone analysis, water penetration, and atmospheric aerosol-related analysis."
       },
       {
         "id": "B2",
         "resolution": "30m",
-        "semantic": "蓝光（Blue），约 0.45–0.51 μm；用于水体、土壤与植被区分等。"
+        "semantic": "Blue band, approximately 0.45–0.51 μm; used for distinguishing water, soil, and vegetation."
       },
       {
         "id": "B3",
         "resolution": "30m",
-        "semantic": "绿光（Green），约 0.53–0.59 μm；强调植被反射特征，辅助植被判读。"
+        "semantic": "Green band, approximately 0.53–0.59 μm; emphasizes vegetation reflectance features and supports vegetation interpretation."
       },
       {
         "id": "B4",
         "resolution": "30m",
-        "semantic": "红光（Red），约 0.64–0.67 μm；常用于植被识别与植被指数计算（如 NDVI 的红光项）。"
+        "semantic": "Red band, approximately 0.64–0.67 μm; commonly used for vegetation identification and vegetation-index calculation, such as the red term in NDVI."
       },
       {
         "id": "B5",
         "resolution": "30m",
-        "semantic": "近红外（NIR），约 0.85–0.88 μm；强调生物量与岸线信息，是植被/水体判别关键波段。"
+        "semantic": "Near-infrared (NIR) band, approximately 0.85–0.88 μm; emphasizes biomass and shoreline information and is a key band for vegetation/water discrimination."
       },
       {
         "id": "B6",
         "resolution": "30m",
-        "semantic": "短波红外1（SWIR1），约 1.57–1.65 μm；用于土壤/植被含水量判别，并可在一定程度上穿透薄云影响。"
+        "semantic": "Shortwave infrared 1 (SWIR1) band, approximately 1.57–1.65 μm; used to discriminate soil/vegetation moisture and can partly reduce the influence of thin cloud."
       },
       {
         "id": "B7",
         "resolution": "30m",
-        "semantic": "短波红外2（SWIR2），约 2.11–2.29 μm；更敏感于含水量差异与部分地物组分变化，常用于灾害/火烧迹地等分析。"
+        "semantic": "Shortwave infrared 2 (SWIR2) band, approximately 2.11–2.29 μm; more sensitive to moisture differences and changes in some surface-material components, commonly used for disaster and burn-scar analysis."
       },
       {
         "id": "B8",
         "resolution": "15m",
-        "semantic": "全色（Panchromatic），约 0.50–0.68 μm；用于锐化融合以提升空间细节表达。"
+        "semantic": "Panchromatic band, approximately 0.50–0.68 μm; used for pan-sharpening to enhance spatial detail."
       },
       {
         "id": "B9",
         "resolution": "30m",
-        "semantic": "卷云（Cirrus），约 1.36–1.38 μm；用于检测高薄云污染，辅助云掩膜与质量控制。"
+        "semantic": "Cirrus band, approximately 1.36–1.38 μm; used to detect high thin-cloud contamination and support cloud masking and quality control."
       },
       {
         "id": "B10",
         "resolution": "30m",
-        "semantic": "热红外1（Thermal Infrared 1），约 10.60–11.19 μm；用于地表热特征相关分析（如地表温度/热异常等）。"
+        "semantic": "Thermal Infrared 1 band, approximately 10.60–11.19 μm; used for land-surface thermal-characteristic analysis, such as land surface temperature and thermal anomalies."
       },
       {
         "id": "B11",
         "resolution": "30m",
-        "semantic": "热红外2（Thermal Infrared 2），约 11.50–12.51 μm；与 B10 配合用于更稳健的热特征判别与质量控制。"
+        "semantic": "Thermal Infrared 2 band, approximately 11.50–12.51 μm; used together with B10 for more robust thermal-feature discrimination and quality control."
       }
     ],
-    "product_info": "原始介绍信息指出：Landsat 8 于 2013-02-11 发射，由 NASA 与 USGS 联合运营，主要用于获取地表覆盖与土地利用变化观测数据。该产品为 Landsat Collection 2 的 Level-1 级产品，通常经过辐射定标、系统几何校正与地形校正等基础处理流程；在 Tier 1 / 高质量场景下，几何配准可达到规定容差（常见表述为 ≤12m RMSE），适合长时间序列分析、定量制图与变化检测等任务。",
-    "semantic_desc": "适用于土地利用/地表覆盖制图、变化检测、生态环境监测、农业与林业应用等。优势在于波段体系完整（含全色与热红外）、质量控制体系成熟，适合做跨时相对比与时间序列分析；限制在于作为 Level-1 基础处理级别产品，面向严格定量反演或跨区域定量一致性时，往往仍需结合具体应用开展进一步物理校正或高阶产品选择。",
-    "level_desc": "Collection 2 Level-1 为基础处理级别产品家族，通常包含辐射定标与几何（含地形）校正；Level-1 数据在 Collection 2 中还常按质量分层（如 Tier 结构），高质量层级被认为更适合时间序列分析，并以规定的几何一致性/容差作为质量参考（例如常见的 ≤12m RMSE 约束）。不同传感器/平台的 L1/L2 定义并不完全一致，本字段用于解释该产品体系下的处理边界与质量含义。"
+    "product_info": "The original description states that Landsat 8 was launched on 2013-02-11 and is jointly operated by NASA and USGS, mainly for observing land-cover and land-use changes. This product is a Landsat Collection 2 Level-1 product and usually includes basic processing such as radiometric calibration, systematic geometric correction, and terrain correction. For Tier 1 / high-quality scenes, geometric registration can meet specified tolerance requirements, commonly expressed as ≤12 m RMSE, making the product suitable for long time-series analysis, quantitative mapping, and change detection.",
+    "semantic_desc": "Suitable for land-use/land-cover mapping, change detection, ecological and environmental monitoring, agriculture, forestry, and related applications. Its strengths are a complete band system, including panchromatic and thermal infrared bands, and a mature quality-control framework, making it suitable for cross-date comparison and time-series analysis. Its limitation is that, as a Level-1 basic processing product, stricter quantitative retrieval or cross-region quantitative consistency often still requires application-specific physical correction or selection of higher-level products.",
+    "level_desc": "Collection 2 Level-1 is a basic processing-level product family that usually includes radiometric calibration and geometric correction, including terrain correction. In Collection 2, Level-1 data are also commonly stratified by quality tiers, such as the Tier structure. Higher-quality tiers are considered more suitable for time-series analysis and use specified geometric consistency/tolerance criteria as quality references, for example the commonly cited ≤12 m RMSE constraint. L1/L2 definitions are not fully identical across sensors and platforms; this field explains the processing boundary and quality meaning within this product system."
   },
   {
     "product_id": 4,
@@ -83,385 +86,399 @@
     "alias": "Sentinel-2A_MSIL1C",
     "time_range": null,
     "type_code": 0,
-    "type": "观测型多光谱影像产品：由 Sentinel-2A 卫星搭载的多光谱成像仪（MSI）获取并处理到 Level-1C。产品提供太阳顶层（TOA）反射率的正射纠正多光谱影像，已完成几何校正（含地形影响纠正）与投影组织，具备一致的空间定位精度，可作为地表监测与后续大气校正（如 Level-2A 地表反射率）的基础输入。",
+    "type": "Observation-oriented multispectral imagery product: acquired by the Sentinel-2A Multispectral Instrument (MSI) and processed to Level-1C. The product provides orthorectified top-of-atmosphere (TOA) reflectance multispectral imagery, with geometric correction including terrain-effect correction and projection-based organization completed. It has consistent spatial positioning accuracy and can serve as baseline input for land-surface monitoring and subsequent atmospheric correction, such as Level-2A surface reflectance.",
     "platform": "Sentinel-2A",
-    "sensor": "MSI 多光谱成像仪（光学）",
+    "sensor": "MSI multispectral imager (optical)",
     "source": "ESA / Copernicus",
     "spatial_extent": {
-      "desc": "区域覆盖（原始 area 为空；以 bbox 表达的覆盖范围为准）",
+      "desc": "Nationwide China",
       "min_lon": 71.6960496164,
       "max_lon": 169.5593013139,
       "min_lat": 1.7172206948,
       "max_lat": 59.5382353517
     },
-    "data_overview": "产品级别：L1C（TOA 反射率正射产品）；主要分辨率：10m（同时包含 20m/60m 波段）；像元类型：uint16；影像数量：5265景；数据量约 10789.39 GB；坐标参考：WGS84/UTM（常见组织方式为 UTM 投影并按分幅系统组织）。",
+    "data_overview": "Product level: L1C, an orthorectified TOA reflectance product; main resolution: 10 m, with additional 20 m and 60 m bands; pixel type: uint16; number of scenes: 5,265; data volume: about 10,789.39 GB; coordinate reference: WGS84/UTM, commonly organized in UTM projection and tile grids.",
     "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(coverageID=\"T49REK_20231004T030551\", productID=\"S2A_MSIL1C\")\r\ncoverage = service.getProcess(\"Coverage.selectBands\").execute(coverage, [\"B02\"])\r\nvis_params = {}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(111.551, 26.625, 9)",
     "bands": [
       {
         "id": "B01",
         "resolution": "60",
-        "semantic": "Coastal（沿海/气溶胶）波段，常用于海岸带与大气气溶胶相关分析（常见中心波长约 443nm）。"
+        "semantic": "Coastal/Aerosol band, commonly used for coastal-zone and atmospheric aerosol-related analysis, with a typical central wavelength of about 443 nm."
       },
       {
         "id": "B02",
         "resolution": "10",
-        "semantic": "Blue（蓝光）波段，常用于水体、土壤与植被区分等（常见中心波长约 490nm）。"
+        "semantic": "Blue band, commonly used to distinguish water, soil, and vegetation, with a typical central wavelength of about 490 nm."
       },
       {
         "id": "B03",
         "resolution": "10",
-        "semantic": "Green（绿光）波段，常用于植被判读、水体与地表特征识别（常见中心波长约 560nm）。"
+        "semantic": "Green band, commonly used for vegetation interpretation, water recognition, and surface-feature identification, with a typical central wavelength of about 560 nm."
       },
       {
         "id": "B04",
         "resolution": "10",
-        "semantic": "Red（红光）波段，常用于植被识别与植被指数计算（如 NDVI 的红光项；常见中心波长约 665nm）。"
+        "semantic": "Red band, commonly used for vegetation identification and vegetation-index calculation, such as the red term in NDVI, with a typical central wavelength of about 665 nm."
       },
       {
         "id": "B05",
         "resolution": "20",
-        "semantic": "Vegetation red edge 1（红边1）波段，用于更精细的植被状态/叶绿素与冠层结构敏感信息提取（常见中心波长约 705nm）。"
+        "semantic": "Vegetation red-edge 1 band, used to extract finer vegetation condition, chlorophyll, and canopy-structure-sensitive information, with a typical central wavelength of about 705 nm."
       },
       {
         "id": "B06",
         "resolution": "20",
-        "semantic": "Vegetation red edge 2（红边2）波段，用于植被生理状态、作物长势等监测（常见中心波长约 740nm）。"
+        "semantic": "Vegetation red-edge 2 band, used for monitoring vegetation physiological condition and crop growth, with a typical central wavelength of about 740 nm."
       },
       {
         "id": "B07",
         "resolution": "20",
-        "semantic": "Vegetation red edge 3（红边3）波段，与红边/NIR 组合可增强植被参数反演与分类判别（常见中心波长约 783nm）。"
+        "semantic": "Vegetation red-edge 3 band; in combination with red-edge/NIR bands, it can enhance vegetation-parameter retrieval and classification discrimination, with a typical central wavelength of about 783 nm."
       },
       {
         "id": "B08",
         "resolution": "10",
-        "semantic": "Near-Infrared（近红外，宽 NIR）波段，是植被/水体判别与生物量相关分析的关键波段（常见中心波长约 842nm）。"
+        "semantic": "Broad near-infrared (NIR) band; a key band for vegetation/water discrimination and biomass-related analysis, with a typical central wavelength of about 842 nm."
       },
       {
         "id": "B8A",
         "resolution": "20",
-        "semantic": "Narrow NIR（窄近红外）波段，常与红边波段配合用于精细植被监测与指数构建（常见中心波长约 865nm）。"
+        "semantic": "Narrow near-infrared band, commonly used together with red-edge bands for fine vegetation monitoring and index construction, with a typical central wavelength of about 865 nm."
       },
       {
         "id": "B09",
         "resolution": "60",
-        "semantic": "Water vapour（水汽）波段，主要用于大气水汽信息与大气校正相关用途（常见中心波长约 945nm）。"
+        "semantic": "Water-vapour band, mainly used for atmospheric water-vapour information and atmospheric-correction-related purposes, with a typical central wavelength of about 945 nm."
       },
       {
         "id": "B10",
         "resolution": "60",
-        "semantic": "Cirrus（卷云）波段，用于检测高薄云污染，辅助质量控制与云掩膜（常见中心波长约 1375nm）。"
+        "semantic": "Cirrus band, used to detect high thin-cloud contamination and support quality control and cloud masking, with a typical central wavelength of about 1375 nm."
       },
       {
         "id": "B11",
         "resolution": "20",
-        "semantic": "SWIR 1（短波红外1）波段，用于含水量判别、植被/土壤水分以及灾害监测相关分析（常见中心波长约 1610nm）。"
+        "semantic": "SWIR 1 band, used for moisture discrimination, vegetation/soil moisture analysis, and disaster monitoring, with a typical central wavelength of about 1610 nm."
       },
       {
         "id": "B12",
         "resolution": "20",
-        "semantic": "SWIR 2（短波红外2）波段，对含水量差异与火烧迹地等灾害影响更敏感（常见中心波长约 2190nm）。"
+        "semantic": "SWIR 2 band, more sensitive to moisture differences and disaster impacts such as burn scars, with a typical central wavelength of about 2190 nm."
       }
     ],
-    "product_info": "S2A_MSIL1C 为 Sentinel-2A 卫星 MSI 多光谱数据的 Level-1C 产品形态，提供 TOA（太阳顶层）反射率多光谱影像；已完成正射纠正与几何校正（含地形影响纠正），并以 UTM/WGS84 投影进行组织。包含 13 个 MSI 光谱波段，空间分辨率分为 10m/20m/60m 三档，可作为后续生成 Level-2A（大气校正后的地表反射率）及各类地表应用的基础输入。",
-    "semantic_desc": "适用于大范围地表监测、地物识别、环境变化分析与灾害监测等。优势在于多光谱（含红边、SWIR、水汽与卷云波段）且 10m 级空间细节较好；限制在于 TOA 反射率仍受大气影响，跨时相定量对比或生物物理参数反演时通常需要进一步进行大气校正或使用 Level-2A 产品。",
-    "level_desc": "Level-1C 指在制图几何下提供的正射纠正 TOA 反射率产品：强调几何校正与空间配准一致性，并完成投影与产品组织；但仍处于 TOA 反射率层级，尚未完成面向地表反射率的完整大气校正处理。"
+    "product_info": "S2A_MSIL1C is the Level-1C product form of Sentinel-2A MSI multispectral data. It provides TOA (top-of-atmosphere) reflectance multispectral imagery; orthorectification and geometric correction, including terrain-effect correction, have been completed, and the product is organized in UTM/WGS84 projection. It contains 13 MSI spectral bands with spatial resolutions of 10 m, 20 m, and 60 m, and can be used as baseline input for generating Level-2A surface reflectance after atmospheric correction and for a wide range of land-surface applications.",
+    "semantic_desc": "Suitable for large-area land-surface monitoring, land-object recognition, environmental change analysis, disaster monitoring, and related tasks. Its strengths are rich multispectral information, including red-edge, SWIR, water-vapour, and cirrus bands, and good 10 m-level spatial detail. Its limitation is that TOA reflectance is still affected by the atmosphere, so cross-date quantitative comparison or biophysical parameter retrieval usually requires further atmospheric correction or use of Level-2A products.",
+    "level_desc": "Level-1C refers to an orthorectified TOA reflectance product provided in cartographic geometry: it emphasizes geometric correction and consistency of spatial registration and includes projection and product organization. However, it remains at the TOA reflectance level and has not yet undergone complete atmospheric correction for surface reflectance."
   },
   {
     "product_id": 209,
     "name": "MYD09Q1",
-    "alias": "MODIS L1级表面反射率产品（250米）",
+    "alias": "MODIS Level-1 surface reflectance product (250 m)",
     "time_range": null,
     "type_code": 0,
-    "type": "观测型表面反射率合成产品：基于 Aqua 卫星 MODIS 观测数据生成的 8 天合成（composite）地表反射率栅格产品，提供红光与近红外两个 250m 反射率主波段，并配套质量控制层；适合植被指数（如 NDVI）计算与地表动态分析等应用。",
-    "platform": "Aqua（MODIS）",
-    "sensor": "MODIS（光学）",
-    "source": "NASA（LP DAAC / LAADS DAAC）",
+    "type": "Observation-oriented surface reflectance composite product: an 8-day composite surface reflectance raster product generated from Aqua MODIS observations. It provides two main 250 m reflectance bands, red and near-infrared, together with quality-control layers, and is suitable for vegetation-index calculation, such as NDVI, and land-surface dynamics analysis.",
+    "platform": "Aqua (MODIS)",
+    "sensor": "MODIS (optical)",
+    "source": "NASA (LP DAAC / LAADS DAAC)",
     "spatial_extent": {
-      "desc": "全球（8天合成格网产品，常见为 Sinusoidal 投影格网）",
+      "desc": "Nationwide China",
       "min_lon": null,
       "max_lon": null,
       "min_lat": null,
       "max_lat": null
     },
-    "data_overview": "产品形态：8天合成的地表反射率产品（提供 bands 1/2 的 250m 反射率，并含质量层）；处理集合：Collection 6/6.1 体系；更新频次：8天；像元类型：int16；影像数量：504；数据量约 409.7 GB；坐标参考：Sinusoidal。",
-    "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(coverageID=\"MYD09Q1.A2023153.h27v06.061.2023164032022\", productID=\"MYD09Q1\")\r\ncoverage = service.getProcess(\"Coverage.selectBands\").execute(coverage, [\"sur_refl_b01\"])\r\nvis_params = {\"min\": -100, \"max\": 100}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(105, 25, 10)\r\n",
+    "data_overview": "Product form: 8-day composite surface reflectance product, providing 250 m reflectance for bands 1/2 and quality layers; processing collection: Collection 6/6.1 system; update frequency: 8 days; pixel type: int16; number of scenes: 504; data volume: about 409.7 GB; coordinate reference: Sinusoidal.",
+    "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(coverageID=\"MYD09Q1.A2023153.h27v06.061.2023164032022\", productID=\"MYD09Q1\")\r\ncoverage = service.getProcess(\"Coverage.selectBands\").execute(coverage, [\"sur_refl_b01\"])\r\nvis_params = {\"min\": -100, \"max\": 100}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(105, 25, 10)",
     "bands": [
       {
         "id": "sur_refl_b01",
         "resolution": "250",
-        "semantic": "地表反射率（Surface Reflectance）Band 1：红光波段（通常对应 MODIS Band 1，约 0.62–0.67 μm）；常用于植被识别、植被指数（如 NDVI）中的红光项、地表覆盖变化分析等。"
+        "semantic": "Surface Reflectance Band 1: red band, usually corresponding to MODIS Band 1 at about 0.62–0.67 μm; commonly used for vegetation identification, the red term in vegetation indices such as NDVI, and land-cover change analysis."
       },
       {
         "id": "sur_refl_b02",
         "resolution": "250",
-        "semantic": "地表反射率（Surface Reflectance）Band 2：近红外波段（通常对应 MODIS Band 2，约 0.84–0.88 μm）；常用于植被生物量/长势、植被指数（如 NDVI）中的近红外项、水体与植被分离等。"
+        "semantic": "Surface Reflectance Band 2: near-infrared band, usually corresponding to MODIS Band 2 at about 0.84–0.88 μm; commonly used for vegetation biomass/vigour, the near-infrared term in vegetation indices such as NDVI, and water/vegetation separation."
       },
       {
         "id": "sur_refl_qc_250m",
         "resolution": "250",
-        "semantic": "250m 反射率质量控制（QC）层：用于标识反射率反演/合成结果的质量信息（如算法/数据质量标志），便于筛除低质量像元或进行质量加权分析。"
+        "semantic": "250 m reflectance quality-control (QC) layer: records quality information for reflectance retrieval/compositing results, such as algorithm and data-quality flags, supporting low-quality pixel screening or quality-weighted analysis."
       },
       {
         "id": "sur_refl_state_250m",
         "resolution": "250",
-        "semantic": "250m 反射率状态（State QA）层：以位字段形式记录观测/大气与云相关状态（如云、云影、气溶胶等影响的状态标识），常用于云掩膜与质量过滤。"
+        "semantic": "250 m reflectance State QA layer: records observation, atmospheric, and cloud-related states in bit-field form, such as cloud, cloud shadow, and aerosol influence flags, and is commonly used for cloud masking and quality filtering."
       }
     ],
-    "product_info": "MYD09Q1 来自 Aqua 卫星 MODIS 传感器观测数据，在 Collection 6/6.1 体系下生成的 8 天合成地表反射率产品。产品提供 250m 分辨率的红光与近红外两条主反射率波段，并提供质量控制与状态质量层。8 天合成通常会在合成周期内从多次观测中选取“最佳观测”以降低云/云影与不利观测几何等影响，适合作为区域/全球尺度时间序列分析与指数计算的基础输入。",
-    "semantic_desc": "适用于植被监测（NDVI 等指数计算）、地表动态变化分析、区域尺度生态与农业监测等。优势是合成后云影响相对降低、时间序列稳定、计算负担相对可控；限制是 8 天合成会平滑短期变化，且质量层需要配合使用以剔除受云/气溶胶等影响的像元。",
-    "level_desc": "该产品属于 MODIS 地表反射率合成类产品：基于大气校正后的观测反射率，从 8 天周期内多次观测中按质量准则选取代表性像元形成格网合成结果，并配套 QC/State QA 质量信息。不同平台对“L1/L2/L3”命名可能不同，本字段以该产品自身文档中的“8天合成格网地表反射率 + 质量层”作为处理级别与使用边界的核心说明。"
+    "product_info": "MYD09Q1 is an 8-day composite surface reflectance product generated from Aqua MODIS observations under the Collection 6/6.1 system. The product provides red and near-infrared primary reflectance bands at 250 m resolution, along with quality-control and state QA layers. The 8-day composite usually selects the best observations within the compositing period to reduce the effects of cloud, cloud shadow, and unfavorable viewing geometry, making it suitable as baseline input for regional/global time-series analysis and index calculation.",
+    "semantic_desc": "Suitable for vegetation monitoring, such as NDVI calculation, land-surface dynamics analysis, and regional-scale ecological and agricultural monitoring. Its strengths are reduced cloud impact after compositing, stable time-series characteristics, and relatively manageable computational cost. Its limitations are that 8-day compositing smooths short-term changes and that the quality layers need to be used to remove pixels affected by cloud, aerosols, and related factors.",
+    "level_desc": "This product belongs to the MODIS surface reflectance composite product family: based on atmospherically corrected observed reflectance, representative pixels are selected from multiple observations within an 8-day period according to quality criteria to form a gridded composite, accompanied by QC/State QA quality information. Because L1/L2/L3 naming varies across platforms, this field uses “8-day composite gridded surface reflectance plus quality layers” as the core description of processing level and usage boundary."
   },
   {
     "product_id": 124,
     "name": "ASTER_GDEM_DEM30",
-    "alias": "全球30米数字高程模型（ASTER GDEM）",
+    "alias": "Global 30 m digital elevation model (ASTER GDEM)",
     "time_range": null,
     "type_code": 0,
-    "type": "专题型地形栅格产品：基于 Terra 卫星搭载的 ASTER 传感器获取的立体像对影像，通过自动立体匹配与拼接处理生成的全球数字高程模型（DEM）。该产品不属于传感器直接观测影像，而是由多时相立体观测反演得到的地表高程结果数据。",
+    "type": "Thematic terrain raster product: a global digital elevation model (DEM) generated from stereo-pair imagery acquired by the ASTER sensor onboard Terra through automatic stereo matching and mosaicking. It is not a directly observed sensor image, but a surface-elevation result dataset retrieved from multi-temporal stereo observations.",
     "platform": "Terra",
-    "sensor": "ASTER（立体光学传感器）",
+    "sensor": "ASTER stereo optical sensor",
     "source": "NASA / METI",
     "spatial_extent": {
-      "desc": "全球陆地区域",
+      "desc": "Global land areas",
       "min_lon": null,
       "max_lon": null,
       "min_lat": null,
       "max_lat": null
     },
-    "data_overview": "产品类型：全球数字高程模型（DEM）；空间分辨率：30m；像元类型：int16；覆盖范围：全球陆地区域；数据量约 847.4 GB；栅格瓦片数量约 22466；坐标参考：WGS84；更新方式：不定期版本更新。",
+    "data_overview": "Product type: global digital elevation model (DEM); spatial resolution: 30 m; pixel type: int16; coverage: global land areas; data volume: about 847.4 GB; number of raster tiles: about 22,466; coordinate reference: WGS84; update mode: irregular version updates.",
     "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(coverageID=\"ASTGTM_N00E006\", productID=\"ASTER_GDEM_DEM30\")\r\nvis_params = {\"min\": -100, \"max\": 100}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(6.5, 0.5, 10)",
     "bands": [
       {
         "id": "dem30",
         "resolution": "30",
-        "semantic": "地表高程值（DEM）：表示地球陆地区域的地表绝对高程信息，单位通常为米。该高程数据由 ASTER 立体像对通过自动立体匹配与拼接反演得到，适用于地形起伏分析、水文建模、坡度坡向计算与灾害风险评估等。"
+        "semantic": "Surface elevation value (DEM): represents absolute surface elevation information for land areas of the Earth, usually in meters. The elevation data are retrieved from ASTER stereo pairs through automatic stereo matching and mosaicking, and are suitable for terrain-relief analysis, hydrological modeling, slope/aspect calculation, and disaster-risk assessment."
       }
     ],
-    "product_info": "ASTER GDEM 是利用 Terra 卫星 ASTER 传感器获取的立体像对影像生成的全球数字高程模型产品，空间分辨率为 30 米。数据通过自动立体匹配与拼接算法生成，并在多个版本中持续改进整体一致性与局部精度。产品覆盖全球陆地区域，提供统一格网形式的地表高程信息。",
-    "semantic_desc": "适用于地形分析、水文模拟、流域分析、坡度与坡向计算、土地利用研究、城市扩张分析以及地质灾害与自然灾害风险评估等。优势在于覆盖范围全球、分辨率较高且易于获取；局限在于局部区域可能存在空洞、噪声或高程误差，实际应用中常需结合平滑、填洼或与其他 DEM 数据进行对比验证。",
-    "level_desc": "该产品属于高层级专题数据产品（常被归为 L3 级别）：由多景立体观测数据反演得到的地表参数结果，而非直接观测影像。其质量与精度受立体匹配条件、地表覆盖类型及观测几何等因素影响，不同版本间可能存在改进与差异。"
+    "product_info": "ASTER GDEM is a global digital elevation model product generated from stereo-pair imagery acquired by the ASTER sensor onboard the Terra satellite, with a spatial resolution of 30 m. The data are produced through automatic stereo matching and mosaicking algorithms, and overall consistency and local accuracy have been improved across multiple versions. The product covers global land areas and provides surface elevation information in a unified grid form.",
+    "semantic_desc": "Suitable for terrain analysis, hydrological simulation, watershed analysis, slope and aspect calculation, land-use studies, urban expansion analysis, and geological or natural-disaster risk assessment. Its strengths are global coverage, relatively high resolution, and easy accessibility. Its limitations are that some local areas may contain voids, noise, or elevation errors, so practical applications often require smoothing, sink filling, or validation against other DEM datasets.",
+    "level_desc": "This product is a high-level thematic data product, commonly regarded as an L3-type product: it is a retrieved surface-parameter result derived from multiple stereo observations rather than a direct observation image. Its quality and accuracy are affected by stereo matching conditions, land-cover type, and observation geometry, and improvements or differences may exist across versions."
   },
   {
     "product_id": 199,
     "name": "GF1_ARD_WFV2_EO",
-    "alias": "高分一号 ARD 级 WFV2 传感器地表反射率产品",
-    "time_range": ["2013-05-01 00:00:00", "2025-08-01 23:59:59"],
+    "alias": "Gaofen-1 ARD-level WFV2 sensor surface reflectance product",
+    "time_range": [
+      "2013-05-01 00:00:00",
+      "2025-08-01 23:59:59"
+    ],
     "type_code": 0,
-    "type": "分析就绪（ARD）地表反射率产品：由高分一号（GF-1）卫星第二路宽幅成像仪 WFV2 获取的多光谱观测数据，经多级预处理形成可直接用于遥感分析的地表反射率栅格产品。该类产品通常强调辐射/几何一致性与可复用性，适合作为土地利用/覆盖解译、变化检测与生态环境监测等应用的基础输入。",
-    "platform": "高分一号（GF-1）",
-    "sensor": "WFV2 宽幅多光谱成像仪",
-    "source": "CRESDA / 中国资源卫星应用中心（平台字典未给出时按常见来源表述）",
+    "type": "Analysis-ready data (ARD) surface reflectance product: generated from multispectral observations acquired by the WFV2 wide-field imager onboard Gaofen-1 (GF-1) after multi-level preprocessing into raster surface reflectance data that can be directly used for remote-sensing analysis. Such products usually emphasize radiometric/geometric consistency and reusability, and are suitable as baseline input for land-use/cover interpretation, change detection, and ecological-environmental monitoring.",
+    "platform": "Gaofen-1 (GF-1)",
+    "sensor": "WFV2 wide-field multispectral imager",
+    "source": "CRESDA / China Centre for Resources Satellite Data and Application (common source when the platform dictionary does not specify one)",
     "spatial_extent": {
-      "desc": "覆盖范围未在原始字段中明确标注（area 为空）；以具体影像覆盖为准",
+      "desc": "China and selected application regions",
       "min_lon": null,
       "max_lon": null,
       "min_lat": null,
       "max_lat": null
     },
-    "data_overview": "产品级别：ARD；空间分辨率：16m；更新频次：约2天；像元类型：uint16；影像数量：526景；数据量约 2.7 TB；坐标参考：WGS84/UTM。波段除 4 个多光谱反射率波段外，还包含太阳/观测几何角度层与质量控制（QA）层，便于做 BRDF/大气影响评估、质量筛选与时间序列分析。",
-    "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(\r\n    coverageID=\"GF1_WFV2_E100.7_N32.6_20230529_L1A0007305279\", productID=\"GF1_ARD_WFV2_EO\")\r\nvis_params = {}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(100.68, 32.62, 11)",
+    "data_overview": "Product level: ARD; spatial resolution: 16 m; update frequency: about 2 days; pixel type: uint16; number of scenes: 526; data volume: about 2.7 TB; coordinate reference: WGS84/UTM. In addition to four multispectral reflectance bands, the product includes solar/viewing geometry angle layers and a quality assurance (QA) layer, supporting BRDF/atmospheric-effect assessment, quality screening, and time-series analysis.",
+    "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(\r\n  coverageID=\"GF1_WFV2_E100.7_N32.6_20230529_L1A0007305279\", productID=\"GF1_ARD_WFV2_EO\")\r\nvis_params = {}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(100.68, 32.62, 11)",
     "bands": [
       {
         "id": "B1",
         "resolution": "16m",
-        "semantic": "Blue（蓝光）反射率波段：用于水体/土壤/植被区分、浑浊水体与浅水识别等，也是常见真彩合成（B3/B2/B1 或同类组合）的组成波段之一。"
+        "semantic": "Blue reflectance band: used to distinguish water/soil/vegetation, identify turbid and shallow water, and serve as one component of common true-color composites such as B3/B2/B1 or similar combinations."
       },
       {
         "id": "B2",
         "resolution": "16m",
-        "semantic": "Green（绿光）反射率波段：强调植被与地表反射特征差异，常用于真彩显示、地物识别与环境监测。"
+        "semantic": "Green reflectance band: emphasizes differences in vegetation and surface reflectance, and is commonly used for true-color display, land-object recognition, and environmental monitoring."
       },
       {
         "id": "B3",
         "resolution": "16m",
-        "semantic": "Red（红光）反射率波段：用于植被识别、地表覆盖解译，并与近红外共同用于植被指数计算（如 NDVI 的红光项）。"
+        "semantic": "Red reflectance band: used for vegetation identification and land-cover interpretation, and together with near-infrared is used in vegetation-index calculation, such as the red term in NDVI."
       },
       {
         "id": "B4",
         "resolution": "16m",
-        "semantic": "Near-Infrared（近红外）反射率波段：对植被生物量/长势更敏感，是植被指数（如 NDVI）的近红外项，也常用于水体与植被分离、岸线识别等。"
+        "semantic": "Near-infrared reflectance band: more sensitive to vegetation biomass/vigour, serving as the near-infrared term in vegetation indices such as NDVI, and commonly used for water/vegetation separation and shoreline recognition."
       },
       {
         "id": "VAA",
         "resolution": null,
-        "semantic": "View Azimuth Angle（观测方位角）：描述传感器观测方向在水平面内的方位信息，常与 VZA 配合用于几何/辐射归一化、角度效应分析等。"
+        "semantic": "View Azimuth Angle layer: describes the sensor viewing direction in the horizontal plane and is often used with VZA for geometric/radiometric normalization and angular-effect analysis."
       },
       {
         "id": "VZA",
         "resolution": null,
-        "semantic": "View Zenith Angle（观测天顶角）：描述观测方向与当地天顶方向的夹角，常用于 BRDF/角度效应评估与时间序列一致性控制。"
+        "semantic": "View Zenith Angle layer: describes the angle between the viewing direction and the local zenith, commonly used for BRDF/angular-effect assessment and time-series consistency control."
       },
       {
         "id": "SAA",
         "resolution": null,
-        "semantic": "Solar Azimuth Angle（太阳方位角）：描述太阳入射方向在水平面内的方位信息，常用于光照几何分析与地表反射率一致性处理。"
+        "semantic": "Solar Azimuth Angle layer: describes the horizontal direction of incoming solar illumination, commonly used for illumination-geometry analysis and surface-reflectance consistency processing."
       },
       {
         "id": "SZA",
         "resolution": null,
-        "semantic": "Solar Zenith Angle（太阳天顶角）：描述太阳入射方向与当地天顶方向的夹角，影响阴影、辐照度与反射率，常用于质量控制与辐射归一化。"
+        "semantic": "Solar Zenith Angle layer: describes the angle between incoming solar illumination and the local zenith, influencing shadow, irradiance, and reflectance, and commonly used for quality control and radiometric normalization."
       },
       {
         "id": "QA",
         "resolution": null,
-        "semantic": "Quality Assurance（质量控制）层：用于标识像元质量、云/云影或无效值等状态（具体位编码/取值含义以产品文档或平台说明为准），建议在制图、变化检测与时间序列分析前进行质量筛选。"
+        "semantic": "Quality Assurance layer: used to identify pixel quality, cloud/cloud shadow, invalid values, and related states. The specific bit coding or value meaning should follow product documentation or platform notes; quality screening is recommended before mapping, change detection, and time-series analysis."
       }
     ],
-    "product_info": "高分一号 ARD 级 WFV2 产品由 GF-1 卫星第二路宽幅成像仪获取的多光谱影像生成，目标是提供可直接用于分析的地表反射率数据。产品通常包含多波段反射率（蓝/绿/红/近红外）以及太阳与观测几何角度层（SAA/SZA/VAA/VZA）和 QA 质量层；并以 WGS84/UTM 组织以支持空间分析与跨时相对齐。空间分辨率为 16m，适合区域尺度土地利用/覆盖监测与变化检测。",
-    "semantic_desc": "适用于土地利用/覆盖分类、土地变化检测、生态环境监测等应用。优势是已达到 ARD 级别，通常更便于直接做多时相对比与时间序列分析；限制在于角度效应、云/薄云及复杂地形区域仍可能影响反射率一致性，建议结合 QA 与角度层进行质量过滤和必要的归一化处理。",
-    "level_desc": "ARD（Analysis Ready Data）强调“可直接分析”的数据形态：相较基础影像，通常已完成一系列预处理以提升辐射/几何一致性与可用性，并提供必要的辅助层（如角度与 QA）以支撑质量控制与可复现分析。不同卫星/机构对 ARD 具体流程与标准可能不同，本字段用于描述该产品在平台定义下的预处理完成度与使用边界。"
+    "product_info": "The GF-1 ARD-level WFV2 product is generated from multispectral imagery acquired by the second Wide Field of View sensor (WFV2) onboard GF-1. It aims to provide surface reflectance data directly usable for analysis. The product usually contains multispectral reflectance bands (blue/green/red/near-infrared), solar and viewing geometry angle layers (SAA/SZA/VAA/VZA), and a QA quality layer; it is organized in WGS84/UTM to support spatial analysis and cross-date alignment. With 16 m spatial resolution, it is suitable for regional land-use/cover monitoring and change detection.",
+    "semantic_desc": "Suitable for land-use/cover classification, land-change detection, ecological-environmental monitoring, and related applications. Its strength is that it has reached ARD level and is generally more convenient for direct multi-temporal comparison and time-series analysis. Its limitations are that angular effects, cloud/thin cloud, and complex terrain may still affect reflectance consistency, so QA and angle layers should be used for quality filtering and necessary normalization.",
+    "level_desc": "ARD (Analysis Ready Data) emphasizes a data form that is “ready for direct analysis.” Compared with basic imagery, it usually has undergone a series of preprocessing steps to improve radiometric/geometric consistency and usability, and provides necessary auxiliary layers, such as angle and QA layers, to support quality control and reproducible analysis. Specific ARD procedures and standards may vary across satellites and institutions; this field describes the preprocessing completeness and usage boundary defined for this product on the platform."
   },
   {
     "product_id": 345,
     "name": "LJ3II_PAN",
-    "alias": "武汉一号全色数据（珞珈三号02星）",
-    "time_range": ["2024-05-01 00:00:00", null],
+    "alias": "Wuhan-1 panchromatic data (Luojia-3 02)",
+    "time_range": [
+      "2024-05-01 00:00:00",
+      null
+    ],
     "type_code": 0,
-    "type": "高分辨率光学成像产品（全色/高分相机）：由武汉一号（珞珈三号02星，LJ3II）搭载的高分相机（PMC）采集生成，面向地物精细识别与灾害监测等应用。产品级别为 L1A，并完成相对辐射校正等基础预处理，适合作为高分辨率制图、目标/变化解译与应急监测的基础输入数据。",
-    "platform": "武汉一号（珞珈三号02星，LJ3II）",
-    "sensor": "PMC 高分相机（全色成像）",
-    "source": "武汉大学",
+    "type": "High-resolution optical imaging product (panchromatic / high-resolution camera): acquired by the high-resolution camera (PMC) onboard Wuhan-1 (Luojia-3 02, LJ3II) and oriented to fine land-object recognition and disaster monitoring. The product level is L1A and basic preprocessing such as relative radiometric correction has been completed, making it suitable as baseline input for high-resolution mapping, object/change interpretation, and emergency monitoring.",
+    "platform": "Wuhan-1 (Luojia-3 02, LJ3II)",
+    "sensor": "PMC high-resolution camera (panchromatic imaging)",
+    "source": "Wuhan University",
     "spatial_extent": {
-      "desc": "全球",
+      "desc": "Global / mission-covered regions",
       "min_lon": null,
       "max_lon": null,
       "min_lat": null,
       "max_lat": null
     },
-    "data_overview": "时相范围：2024年5月至今；空间分辨率：0.5m；幅宽：10km；单幅图幅面积：约150km²；更新频次：约1天；影像数量：84834景；数据量约34.1 TB；像元类型：uint16；坐标参考：WGS84。说明：产品介绍中强调“全色成像（覆盖蓝/绿/红/近红外宽谱范围）”，但当前波段列表中提供了 B1–B4（Blue/Green/Red/NIR）标识，实际使用时建议以平台返回的数据组织与文档说明为准。",
-    "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\nls8 = service.getCoverage(\r\n    coverageID=\"LJ3II_PAN_E107.99_N41.05_20250816_L1A_015_L1A\", productID=\"LJ3II_PAN\")",
+    "data_overview": "Temporal range: May 2024 to present; spatial resolution: 0.5 m; swath width: 10 km; single-scene coverage area: about 150 km²; update frequency: about 1 day; number of scenes: 84,834; data volume: about 34.1 TB; pixel type: uint16; coordinate reference: WGS84. Note: the product description emphasizes panchromatic imaging covering a broad blue/green/red/near-infrared spectral range, while the current band list provides B1–B4 (Blue/Green/Red/NIR) identifiers. In actual use, the platform-returned data organization and documentation should take precedence.",
+    "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\nls8 = service.getCoverage(\r\n  coverageID=\"LJ3II_PAN_E107.99_N41.05_20250816_L1A_015_L1A\", productID=\"LJ3II_PAN\")",
     "bands": [
       {
         "id": "B1",
         "resolution": "0.5",
-        "semantic": "Blue（蓝光）通道标识：用于增强水体/土壤/植被的可视化与识别能力，常作为真彩或伪彩显示的组成部分。注：若该产品实际为宽谱全色成像，则该标识可能代表平台内部的数据组织方式或派生通道，需结合平台文档确认。"
+        "semantic": "Blue-channel identifier: used to enhance visualization and recognition of water, soil, and vegetation, and commonly serves as a component of true-color or false-color display. Note: if the product is actually broad-spectrum panchromatic imaging, this identifier may represent the platform’s internal data organization or a derived channel and should be confirmed with platform documentation."
       },
       {
         "id": "B2",
         "resolution": "0.5",
-        "semantic": "Green（绿光）通道标识：用于地表覆盖与植被判读，常参与真彩合成与变化解译。注：若实际为宽谱全色成像，该标识的物理含义以平台说明为准。"
+        "semantic": "Green-channel identifier: used for land-cover and vegetation interpretation and commonly participates in true-color compositing and change interpretation. Note: if the actual product is broad-spectrum panchromatic imaging, its physical meaning should follow the platform description."
       },
       {
         "id": "B3",
         "resolution": "0.5",
-        "semantic": "Red（红光）通道标识：用于植被/裸地/建筑等地物差异表达，并常用于植被监测相关特征构建。注：若实际为宽谱全色成像，该标识的物理含义以平台说明为准。"
+        "semantic": "Red-channel identifier: used to express differences among vegetation, bare land, buildings, and other surface objects, and commonly contributes to vegetation-monitoring feature construction. Note: if the actual product is broad-spectrum panchromatic imaging, its physical meaning should follow the platform description."
       },
       {
         "id": "B4",
         "resolution": "0.5",
-        "semantic": "NIR（近红外）通道标识：对植被与水体区分更敏感，常用于植被解译与目标判读。注：若实际为宽谱全色成像，该标识的物理含义以平台说明为准。"
+        "semantic": "NIR-channel identifier: more sensitive to vegetation and water-body discrimination, and commonly used for vegetation interpretation and object recognition. Note: if the actual product is broad-spectrum panchromatic imaging, its physical meaning should follow the platform description."
       }
     ],
-    "product_info": "武汉一号（珞珈三号02星，LJ3II）由武汉大学相关团队研制，产品为其高分相机（PMC）采集的 0.5m 分辨率影像数据，幅宽约 10km，单景覆盖约 150km²。产品级别 L1A，已进行相对辐射校正等基础处理，按 WGS84 组织并支持高效分发与业务化运行需求。",
-    "semantic_desc": "适用于灾害监测、应急响应、精细地物识别、变化检测、城市与基础设施精细制图等场景。优势在于 0.5m 级空间细节与较高获取频率，利于快速发现与定位地表变化；限制在于高分辨率数据对云/雾与光照条件敏感，且跨时相定量对比通常需要结合更严格的辐射归一化与质量控制流程。",
-    "level_desc": "L1A 表示经过基础预处理的成像产品形态（如相对辐射校正等），通常保留较完整的观测信息以支持后续几何精校、辐射归一化与应用加工。不同平台对 L1A 的处理内容定义可能不同，本字段用于说明该产品在平台定义下的预处理范围与使用边界。"
+    "product_info": "Wuhan-1 (Luojia-3 02, LJ3II) was developed by a Wuhan University-related team. This product is 0.5 m-resolution imagery collected by its high-resolution camera (PMC), with a swath width of about 10 km and single-scene coverage of about 150 km². The product level is L1A; basic processing such as relative radiometric correction has been completed. It is organized under WGS84 and supports efficient distribution and operational application needs.",
+    "semantic_desc": "Suitable for disaster monitoring, emergency response, fine land-object recognition, change detection, and detailed urban/infrastructure mapping. Its strengths are 0.5 m-level spatial detail and relatively high acquisition frequency, which help rapidly detect and locate land-surface changes. Its limitations are that high-resolution data are sensitive to cloud/fog and illumination conditions, and cross-date quantitative comparison usually requires stricter radiometric normalization and quality-control workflows.",
+    "level_desc": "L1A denotes an imaging product form that has undergone basic preprocessing, such as relative radiometric correction, and usually retains relatively complete observation information to support subsequent geometric refinement, radiometric normalization, and application processing. The processing content of L1A may differ across platforms; this field explains the preprocessing scope and usage boundary defined for this product on the platform."
   },
   {
-  "product_id": 27,
-  "name": "GF2_L1_PMS1_EO",
-  "alias": "高分二号 L1 级 PMS1 传感器产品",
-  "time_range": ["2014-08-01 00:00:00", "2025-08-01 23:59:59"],
-  "type": "OGE 平台中该产品的类型枚举值为 0；在缺少统一分类标准的情况下，可将其理解为“光学遥感影像产品（已做基础辐射/几何处理的 L1 级数据）”。",
-  "product_info": "该产品来自高分二号（GF-2）光学载荷 PMS1。产品为 L1 级影像，经辐射定标与几何校正后提供全色与多光谱数据：全色 PAN（约 0.8m 级；平台字段为 0.8000000000000），多光谱 MSS（约 3.2m 级；平台字段为 3.2000000000000，包含蓝/绿/红/近红外 4 个波段）。数据类型为 uint16。样例景采用 WGS84/UTM（crsDictItemId=26，crsEn=“WGS84/UTM”），示例景本身 CRS 字段为空但可按平台产品定义理解为 UTM 投影体系。",
-  "semantic_desc": "适用于城市精细制图与变化检测、灾害监测（如滑坡、洪涝、地震损毁识别）、基础设施与地形地物调查等需要高空间分辨率的应用。全色波段适合目标识别与纹理细节增强，多光谱波段适合地物分类、植被与水体识别等。若需要融合（pan-sharpening），可结合 PAN 与 MSS 生成更高分辨率的彩色影像。",
-  "level_desc": "L1 表示经过基础处理的一级产品，通常包含辐射定标与几何校正，使影像具备可用的辐射一致性与空间定位能力，适合大多数下游解译与定量分析的输入数据。不同卫星/传感器的 L1 具体实现细节可能不同，建议在使用时结合平台说明与样例验证几何精度与辐射一致性。",
-  "bands": [
-    {
-      "band_num": "PAN1",
-      "band_name": "PAN1",
-      "resolution": "0.8000000000000",
-      "semantic_desc": "全色波段（高空间分辨率），用于目标细节识别、边缘与纹理增强，也常用于与多光谱波段进行融合以提升彩色影像空间分辨率。"
-    },
-    {
-      "band_num": "MSS1_band1",
-      "band_name": "Blue",
-      "resolution": "3.2000000000000",
-      "semantic_desc": "蓝光波段（多光谱），常用于水体识别、浑浊度与近岸水色信息、以及与其他波段组合进行地物分类。"
-    },
-    {
-      "band_num": "MSS1_band2",
-      "band_name": "Green",
-      "resolution": "3.2000000000000",
-      "semantic_desc": "绿光波段（多光谱），常用于植被与地表反射特征分析、与红光/近红外组合用于地物分类与变化检测。"
-    },
-    {
-      "band_num": "MSS1_band3",
-      "band_name": "Red",
-      "resolution": "3.2000000000000",
-      "semantic_desc": "红光波段（多光谱），常用于植被/土壤区分、与近红外组合计算植被指数（如 NDVI）或开展地物分类。"
-    },
-    {
-      "band_num": "MSS1_band4",
-      "band_name": "Near-Infrared",
-      "resolution": "3.2000000000000",
-      "semantic_desc": "近红外波段（多光谱），对植被冠层结构与含水状况敏感，常用于植被指数计算、植被/水体区分与生态监测。"
-    }
-  ],
-  "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(\r\n    coverageID=\"GF2_PMS1_E113.7_N30.1_20200523_L1A0004818480\", productID=\"GF2_L1_PMS1_EO\")\r\nvis_params = {}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(113.69, 30.11, 11)\r\n",
-  "data_overview": "数据规模：imageCount=32，dataSize=79.8 GB。更新频次：约 4 天。主题标签：灾害监测。卫星/任务：高分二号（GF-2）。传感器类型：光学。平台标注分辨率为“1/4 米”（通常对应全色约 1m 级、多光谱约 4m 级的产品描述；本产品波段字段给出的更精细数值为 0.8m 与 3.2m，可视为更接近实际的采样间距/产品规格）。"
-},
-  {
-  "product_id": 456,
-  "name": "LC09_C02_L2",
-  "alias": "Landsat-9 Collection 02 SR",
-  "time_range": ["2023-01-01 00:00:00", "2024-12-31 23:59:59"],
-  "type": "观测型多波段光学/热红外遥感产品：以 Landsat 9 的地表观测数据为主体，属于 Collection 2 的 Level-2 级产品，已完成辐射定标、地形校正与大气校正，提供地表反射率（SR）与地表温度（ST）数据，适合作为长时间序列定量分析、植被监测、土地利用/覆盖制图与地表热环境分析的基础输入。",
-  "platform": "Landsat 9",
-  "sensor": "OLI-2/TIRS-2 光学与热红外传感器",
-  "source": "USGS",
-  "spatial_extent": {
-    "desc": "全国（中国范围）",
-    "min_lon": 66.7628684078,
-    "max_lon": 139.0505008707,
-    "min_lat": 0.3927709309,
-    "max_lat": 55.6303633945
+    "product_id": 27,
+    "name": "GF2_L1_PMS1_EO",
+    "alias": "Gaofen-2 Level-1 PMS1 sensor product",
+    "time_range": [
+      "2014-08-01 00:00:00",
+      "2025-08-01 23:59:59"
+    ],
+    "type": "The product type enumeration value in the OGE platform is 0. In the absence of a unified classification standard, it can be understood as an optical remote-sensing imagery product, namely L1-level data with basic radiometric/geometric processing.",
+    "product_info": "This product comes from the PMS1 optical payload onboard Gaofen-2 (GF-2). It is an L1 imagery product that provides panchromatic and multispectral data after radiometric calibration and geometric correction: panchromatic PAN at about 0.8 m level, with the platform field 0.8000000000000, and multispectral MSS at about 3.2 m level, with the platform field 3.2000000000000, including blue, green, red, and near-infrared bands. The data type is uint16. The sample scene uses WGS84/UTM (crsDictItemId=26, crsEn=\"WGS84/UTM\"). Although the scene-level CRS field is empty, it can be understood as belonging to a UTM projection system according to the platform product definition.",
+    "semantic_desc": "Suitable for applications requiring high spatial resolution, such as detailed urban mapping and change detection, disaster monitoring including landslide, flood, and earthquake-damage identification, infrastructure survey, and terrain/land-object investigation. The panchromatic band supports target recognition and texture-detail enhancement, while the multispectral bands support land-object classification, vegetation recognition, and water-body identification. If pan-sharpening is required, PAN and MSS can be combined to generate higher-resolution color imagery.",
+    "level_desc": "L1 denotes a primary product that has undergone basic processing, usually including radiometric calibration and geometric correction, so that the imagery has usable radiometric consistency and spatial positioning capability and can serve as input for most downstream interpretation and quantitative analysis. Specific L1 implementation details may vary by satellite/sensor, so geometric accuracy and radiometric consistency should be checked with platform notes and sample validation when used.",
+    "bands": [
+      {
+        "band_num": "PAN1",
+        "band_name": "PAN1",
+        "resolution": "0.8000000000000",
+        "semantic_desc": "Panchromatic band (high spatial resolution), used for target-detail recognition, edge and texture enhancement, and commonly for fusion with multispectral bands to improve the spatial resolution of color imagery."
+      },
+      {
+        "band_num": "MSS1_band1",
+        "band_name": "Blue",
+        "resolution": "3.2000000000000",
+        "semantic_desc": "Blue band (multispectral), commonly used for water-body recognition, turbidity and nearshore water-color information, and land-object classification in combination with other bands."
+      },
+      {
+        "band_num": "MSS1_band2",
+        "band_name": "Green",
+        "resolution": "3.2000000000000",
+        "semantic_desc": "Green band (multispectral), commonly used for vegetation and surface-reflectance feature analysis, and in combination with red/NIR bands for land-object classification and change detection."
+      },
+      {
+        "band_num": "MSS1_band3",
+        "band_name": "Red",
+        "resolution": "3.2000000000000",
+        "semantic_desc": "Red band (multispectral), commonly used for vegetation/soil discrimination, vegetation-index calculation such as NDVI in combination with near-infrared, and land-object classification."
+      },
+      {
+        "band_num": "MSS1_band4",
+        "band_name": "Near-Infrared",
+        "resolution": "3.2000000000000",
+        "semantic_desc": "Near-infrared band (multispectral), sensitive to vegetation canopy structure and moisture condition, and commonly used for vegetation-index calculation, vegetation/water separation, and ecological monitoring."
+      }
+    ],
+    "sample_code": "import oge\r\noge.initialize()\r\nservice = oge.Service()\r\ncoverage = service.getCoverage(\r\n  coverageID=\"GF2_PMS1_E113.7_N30.1_20200523_L1A0004818480\", productID=\"GF2_L1_PMS1_EO\")\r\nvis_params = {}\r\ncoverage.styles(vis_params).getMap(\"coverage\")\r\noge.mapclient.centerMap(113.69, 30.11, 11)",
+    "data_overview": "Data scale: imageCount=32, dataSize=79.8 GB. Update frequency: about 4 days. Theme tag: disaster monitoring. Satellite/mission: Gaofen-2 (GF-2). Sensor type: optical. The platform marks the resolution as “1/4 m,” usually corresponding to product descriptions of approximately 1 m panchromatic and 4 m multispectral resolution. The band fields of this product provide more specific values of 0.8 m and 3.2 m, which can be regarded as closer to the actual sampling interval/product specification.",
+    "sensor": null,
+    "source": null
   },
-  "data_overview": "数据时间范围：2023年1月至2024年12月；覆盖范围：全国；更新频率：16天；影像数量：54846景；数据量约69084.00 GB；像元类型：uint16；主要空间分辨率：30米；坐标参考：WGS84/UTM。",
-  "bands": [
-    {
-      "id": "SR_B1",
-      "resolution": "30m",
-      "semantic": "气溶胶/沿海波段（Coastal/Aerosol），波段范围约 0.43–0.45 μm；常用于大气气溶胶影响识别、海岸带与水体相关分析。"
+  {
+    "product_id": 456,
+    "name": "LC09_C02_L2",
+    "alias": "Landsat-9 Collection 02 SR",
+    "time_range": [
+      "2023-01-01 00:00:00",
+      "2024-12-31 23:59:59"
+    ],
+    "type": "Observation-oriented multispectral optical/thermal-infrared remote-sensing product: based on Landsat 9 surface observations and belonging to the Collection 2 Level-2 product family. It has undergone radiometric calibration, terrain correction, and atmospheric correction, and provides surface reflectance (SR) and surface temperature (ST) data. It is suitable as baseline input for long time-series quantitative analysis, vegetation monitoring, land-use/cover mapping, and land-surface thermal-environment analysis.",
+    "platform": "Landsat 9",
+    "sensor": "OLI-2/TIRS-2 optical and thermal infrared sensor",
+    "source": "USGS",
+    "spatial_extent": {
+      "desc": "Nationwide China",
+      "min_lon": 66.7628684078,
+      "max_lon": 139.0505008707,
+      "min_lat": 0.3927709309,
+      "max_lat": 55.6303633945
     },
-    {
-      "id": "SR_B2",
-      "resolution": "30m",
-      "semantic": "蓝光（Blue），波段范围约 0.45–0.51 μm；用于水体、土壤、植被和浅水区域识别，也是自然彩色合成的重要蓝色通道。"
-    },
-    {
-      "id": "SR_B3",
-      "resolution": "30m",
-      "semantic": "绿光（Green），波段范围约 0.53–0.59 μm；可突出植被绿峰反射特征，常用于自然彩色合成、植被判读与地物区分。"
-    },
-    {
-      "id": "SR_B4",
-      "resolution": "30m",
-      "semantic": "红光（Red），波段范围约 0.64–0.67 μm；常用于植被识别、裸地/建设用地区分，并作为 NDVI 等植被指数的红光项。"
-    },
-    {
-      "id": "SR_B5",
-      "resolution": "30m",
-      "semantic": "近红外（NIR），波段范围约 0.85–0.88 μm；对植被生长状况、生物量和水体边界敏感，是植被/水体判别和植被指数计算的关键波段。"
-    },
-    {
-      "id": "SR_B6",
-      "resolution": "30m",
-      "semantic": "短波红外1（SWIR1），波段范围约 1.57–1.65 μm；常用于植被和土壤含水量判别、湿度分析、云雪区分及部分地物类型识别。"
-    },
-    {
-      "id": "SR_B7",
-      "resolution": "30m",
-      "semantic": "短波红外2（SWIR2），波段范围约 2.11–2.29 μm；对水分差异、矿物/土壤背景和火烧迹地等地表变化较敏感，适用于灾害监测和地表覆盖变化分析。"
-    },
-    {
-      "id": "ST_B10",
-      "resolution": "30m",
-      "semantic": "地表温度/热红外波段（Thermal Infrared），波段范围约 10.60–11.19 μm；用于地表温度、热异常、城市热岛、旱情和地表能量平衡相关分析。"
-    }
-  ],
-  "product_info": "原始介绍信息指出：Landsat 9 是由 NASA 与 USGS 联合运营的地球观测卫星，于 2021-09-27 发射。LC09_C02_L2 为 Landsat 9 Collection 2 Level-2 产品，已经过辐射定标、地形校正和大气校正，提供地表反射率（SR）与地表温度（ST）数据，并强调具备较高几何精度，适用于长时间序列定量分析。",
-  "semantic_desc": "适用于植被监测、土地利用/地表覆盖制图、生态环境监测、农业与林业应用、水体与湿地识别、灾害监测、城市热环境和地表温度分析等。优势在于 Level-2 产品已提供可用于定量分析的地表反射率与地表温度数据，减少了用户自行开展大气校正的工作量；限制在于实际应用中仍需结合云、云影、雪、饱和像元等质量控制信息，并根据研究区域和指标体系开展进一步筛选、掩膜和时序合成处理。",
-  "level_desc": "Collection 2 Level-2 是较 Level-1 更高阶的分析级产品，通常在基础辐射与几何处理基础上进一步进行大气校正，并生成地表反射率（SR）和地表温度（ST）等物理意义更明确的变量。该级别更适合跨时相、跨区域的定量遥感分析、长时间序列监测与专题制图，但在严格业务化反演中仍应结合质量标识、尺度因子、云掩膜和应用模型要求进行预处理。"
-}
+    "data_overview": "Data time range: January 2023 to December 2024; coverage: nationwide; update frequency: 16 days; number of scenes: 54,846; data volume: about 69,084.00 GB; pixel type: uint16; main spatial resolution: 30 m; coordinate reference: WGS84/UTM.",
+    "bands": [
+      {
+        "id": "SR_B1",
+        "resolution": "30m",
+        "semantic": "Coastal/Aerosol band, approximately 0.43–0.45 μm; commonly used for identifying atmospheric aerosol effects and for coastal-zone and water-related analysis."
+      },
+      {
+        "id": "SR_B2",
+        "resolution": "30m",
+        "semantic": "Blue band, approximately 0.45–0.51 μm; used for recognizing water, soil, vegetation, and shallow-water areas, and also an important blue channel for natural-color composites."
+      },
+      {
+        "id": "SR_B3",
+        "resolution": "30m",
+        "semantic": "Green band, approximately 0.53–0.59 μm; highlights vegetation green-peak reflectance features and is commonly used for natural-color composites, vegetation interpretation, and land-object discrimination."
+      },
+      {
+        "id": "SR_B4",
+        "resolution": "30m",
+        "semantic": "Red band, approximately 0.64–0.67 μm; commonly used for vegetation identification, bare-land/built-up discrimination, and as the red term in vegetation indices such as NDVI."
+      },
+      {
+        "id": "SR_B5",
+        "resolution": "30m",
+        "semantic": "Near-infrared (NIR) band, approximately 0.85–0.88 μm; sensitive to vegetation growth condition, biomass, and water boundaries, and a key band for vegetation/water discrimination and vegetation-index calculation."
+      },
+      {
+        "id": "SR_B6",
+        "resolution": "30m",
+        "semantic": "Shortwave infrared 1 (SWIR1) band, approximately 1.57–1.65 μm; commonly used for vegetation and soil moisture discrimination, wetness analysis, cloud/snow separation, and recognition of some land-object types."
+      },
+      {
+        "id": "SR_B7",
+        "resolution": "30m",
+        "semantic": "Shortwave infrared 2 (SWIR2) band, approximately 2.11–2.29 μm; sensitive to moisture differences, mineral/soil background, burn scars, and other surface changes, and suitable for disaster monitoring and land-cover change analysis."
+      },
+      {
+        "id": "ST_B10",
+        "resolution": "30m",
+        "semantic": "Surface temperature / thermal infrared band, approximately 10.60–11.19 μm; used for land surface temperature, thermal anomalies, urban heat islands, drought, and land-surface energy-balance analysis."
+      }
+    ],
+    "product_info": "The original description states that Landsat 9 is an Earth observation satellite jointly operated by NASA and USGS and was launched on 2021-09-27. LC09_C02_L2 is a Landsat 9 Collection 2 Level-2 product. It has undergone radiometric calibration, terrain correction, and atmospheric correction, provides surface reflectance (SR) and surface temperature (ST) data, and emphasizes high geometric accuracy, making it suitable for long time-series quantitative analysis.",
+    "semantic_desc": "Suitable for vegetation monitoring, land-use/land-cover mapping, ecological and environmental monitoring, agriculture and forestry applications, water and wetland recognition, disaster monitoring, urban thermal-environment analysis, and land surface temperature analysis. Its strength is that the Level-2 product already provides surface reflectance and surface temperature data suitable for quantitative analysis, reducing the need for users to perform atmospheric correction themselves. Its limitation is that practical applications still need to incorporate quality-control information such as cloud, cloud shadow, snow, and saturated pixels, and require additional screening, masking, and time-series compositing according to the study region and index system.",
+    "level_desc": "Collection 2 Level-2 is an analysis-level product higher than Level-1. It usually performs atmospheric correction on top of basic radiometric and geometric processing, and generates variables with clearer physical meaning such as surface reflectance (SR) and surface temperature (ST). This level is more suitable for cross-date and cross-region quantitative remote-sensing analysis, long time-series monitoring, and thematic mapping, but strict operational retrieval should still incorporate quality flags, scale factors, cloud masks, and preprocessing required by the application model."
+  }
 ]

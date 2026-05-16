@@ -1,156 +1,207 @@
 [
   {
     "keyword": "landsat",
-    "product_ids": [453,456],
-    "semantic_desc": "用户泛指 Landsat 系列影像数据，通常希望获取中分辨率、多光谱、适合长期地表变化分析的光学影像。"
+    "product_ids": [
+      453,
+      456
+    ],
+    "semantic_desc": "The user is referring to Landsat-series optical imagery, typically medium-resolution multispectral data suitable for long-term land-surface change analysis."
   },
   {
     "keyword": "landsat 8",
-    "product_ids": [453],
-    "semantic_desc": "用户明确指定 Landsat 8 卫星影像，常用于地表覆盖制图、变化检测和时间序列分析。"
+    "product_ids": [
+      453
+    ],
+    "semantic_desc": "The user explicitly requests Landsat 8 imagery, commonly used for land-cover mapping, change detection, and time-series analysis."
   },
   {
     "keyword": "landsat8",
-    "product_ids": [453],
-    "semantic_desc": "Landsat 8 的常见简写说法，对应 Landsat 8 的主流光学影像产品集合。"
+    "product_ids": [
+      453
+    ],
+    "semantic_desc": "A common shorthand for Landsat 8, corresponding to mainstream Landsat 8 optical imagery products."
   },
   {
     "keyword": "lc08",
-    "product_ids": [453],
-    "semantic_desc": "Landsat 8 的产品代号说法，多见于较专业用户或脚本化分析场景。"
+    "product_ids": [
+      453
+    ],
+    "semantic_desc": "A Landsat 8 product-code style query, often used by professional or script-oriented users."
   },
-
   {
     "keyword": "lc09",
-    "product_ids": [456],
-    "semantic_desc": "Landsat 9的产品代号说法，多见于较专业用户或脚本化分析场景。"
+    "product_ids": [
+      456
+    ],
+    "semantic_desc": "A Landsat 9 product-code style query, often used by professional or script-oriented users."
   },
-
   {
     "keyword": "landsat9",
-    "product_ids": [456],
-    "semantic_desc": "Landsat 9 的常见简写说法，对应 Landsat 9 的主流光学影像产品集合,包含冬季影像。"
+    "product_ids": [
+      456
+    ],
+    "semantic_desc": "A common shorthand for Landsat 9 optical imagery products, including winter-scene imagery where available."
   },
-
   {
     "keyword": "landsat 9",
-    "product_ids": [456],
-    "semantic_desc": "Landsat 9 的常见简写说法，对应 Landsat 9 的主流光学影像产品集合,包含冬季影像。"
+    "product_ids": [
+      456
+    ],
+    "semantic_desc": "A common wording for Landsat 9 optical imagery products, including winter-scene imagery where available."
   },
-
   {
-    "keyword": "冬季",
-    "product_ids": [456],
-    "semantic_desc": "Landsat 9 的常见简写说法，对应 Landsat 9 的主流光学影像产品集合,包含冬季影像。"
+    "keyword": "winter",
+    "product_ids": [
+      456
+    ],
+    "semantic_desc": "A seasonal keyword pointing to Landsat 9 winter imagery or winter-scene selection."
   },
-
   {
     "keyword": "sentinel",
-    "product_ids": [4],
-    "semantic_desc": "用户泛指哨兵系列光学卫星影像，通常期望获取高空间分辨率、多光谱的地表观测数据。"
+    "product_ids": [
+      4
+    ],
+    "semantic_desc": "The user is referring to Sentinel-series optical satellite imagery, usually Sentinel-2 high-resolution multispectral land-observation data."
   },
   {
     "keyword": "sentinel-2",
-    "product_ids": [4],
-    "semantic_desc": "用户明确指哨兵二号（Sentinel-2）多光谱影像，常用于土地覆盖、植被、水体等分析。"
+    "product_ids": [
+      4
+    ],
+    "semantic_desc": "The user explicitly requests Sentinel-2 multispectral imagery for land-cover, vegetation, water, or similar analysis."
   },
   {
     "keyword": "sentinel2",
-    "product_ids": [4],
-    "semantic_desc": "Sentinel-2 的常见简写，对应 MSI 多光谱光学影像产品。"
+    "product_ids": [
+      4
+    ],
+    "semantic_desc": "A common shorthand for Sentinel-2 MSI multispectral optical imagery."
   },
   {
-    "keyword": "哨兵",
-    "product_ids": [4],
-    "semantic_desc": "中文用户口语中对 Sentinel 系列卫星的统称，通常默认指 Sentinel-2 光学影像。"
+    "keyword": "sentinel",
+    "product_ids": [
+      4
+    ],
+    "semantic_desc": "The user is referring to Sentinel-series optical satellite imagery, usually Sentinel-2 high-resolution multispectral land-observation data."
   },
   {
-    "keyword": "哨兵2",
-    "product_ids": [4],
-    "semantic_desc": "中文用户对 Sentinel-2 的常见称呼，用于获取 10–20 米分辨率的多光谱影像。"
+    "keyword": "sentinel-2",
+    "product_ids": [
+      4
+    ],
+    "semantic_desc": "The user explicitly requests Sentinel-2 multispectral imagery for land-cover, vegetation, water, or similar analysis."
   },
-
   {
     "keyword": "modis",
-    "product_ids": [209],
-    "semantic_desc": "用户泛指 MODIS 数据，通常关注大范围、长时间序列的环境或植被监测。"
+    "product_ids": [
+      209
+    ],
+    "semantic_desc": "The user is referring to MODIS data, typically for large-area, long-term environmental or vegetation monitoring."
   },
   {
-    "keyword": "modis 植被",
-    "product_ids": [209],
-    "semantic_desc": "用户希望利用 MODIS 数据开展植被监测或生态变化分析。"
+    "keyword": "modis vegetation",
+    "product_ids": [
+      209
+    ],
+    "semantic_desc": "The user wants to use MODIS data for vegetation monitoring or ecological-change analysis."
   },
   {
     "keyword": "ndvi",
-    "product_ids": [209],
-    "semantic_desc": "用户直接提出 NDVI 计算或分析任务时的入口，对应可用于 NDVI 计算的 MODIS 地表反射率产品。"
+    "product_ids": [
+      209
+    ],
+    "semantic_desc": "An entry point for NDVI calculation or analysis tasks, corresponding to products suitable for NDVI computation such as MODIS surface reflectance."
   },
-
   {
     "keyword": "dem",
-    "product_ids": [124],
-    "semantic_desc": "用户泛指数字高程模型数据，常用于地形分析、水文建模或空间校正。"
+    "product_ids": [
+      124
+    ],
+    "semantic_desc": "The user is referring to digital elevation model data for terrain analysis, hydrological modeling, or spatial correction."
   },
   {
-    "keyword": "30米dem",
-    "product_ids": [124],
-    "semantic_desc": "用户明确需要 30 米分辨率的 DEM 数据，这里对应 ASTER GDEM 全球高程产品。"
+    "keyword": "30m dem",
+    "product_ids": [
+      124
+    ],
+    "semantic_desc": "The user requests 30 m DEM data, corresponding here to the ASTER GDEM global elevation product."
   },
   {
     "keyword": "aster gdem",
-    "product_ids": [124],
-    "semantic_desc": "用户直接指 ASTER GDEM 产品，用于获取全球 30 米分辨率的地表高程信息。"
+    "product_ids": [
+      124
+    ],
+    "semantic_desc": "The user directly refers to ASTER GDEM, a global 30 m elevation product."
   },
   {
-    "keyword": "全球dem",
-    "product_ids": [124],
-    "semantic_desc": "用户希望获取全球覆盖的高程数据，对应 ASTER GDEM 全球 DEM。"
-  },
-
-  {
-    "keyword": "高分",
-    "product_ids": [27],
-    "semantic_desc": "用户泛指高分系列国产卫星数据，通常期望获取中高分辨率光学影像。"
+    "keyword": "global dem",
+    "product_ids": [
+      124
+    ],
+    "semantic_desc": "The user wants globally covered elevation data, corresponding here to ASTER GDEM."
   },
   {
-    "keyword": "高分一号",
-    "product_ids": [199],
-    "semantic_desc": "用户明确指高分一号卫星影像，这里对应其 ARD 级地表反射率产品。"
+    "keyword": "gaofen",
+    "product_ids": [
+      27
+    ],
+    "semantic_desc": "The user refers broadly to Chinese Gaofen satellite data, usually medium- to high-resolution optical imagery."
   },
   {
-    "keyword": "高分二号",
-    "product_ids": [27],
-    "semantic_desc": "用户明确指高分二号卫星影像，这里对应已做基础辐射/几何处理的 L1 级光学遥感影像数据。"
+    "keyword": "gaofen-1",
+    "product_ids": [
+      199
+    ],
+    "semantic_desc": "The user explicitly requests Gaofen-1 imagery, corresponding here to its ARD surface-reflectance product."
   },
   {
-    "keyword": "地表反射率",
-    "product_ids": [199],
-    "semantic_desc": "用户希望直接使用已预处理、可分析的地表反射率数据，对应 GF-1 ARD 产品。"
+    "keyword": "gaofen-2",
+    "product_ids": [
+      27
+    ],
+    "semantic_desc": "The user explicitly requests Gaofen-2 imagery, corresponding here to Level-1 optical remote-sensing imagery with basic radiometric/geometric processing."
   },
   {
-    "keyword": "国产卫星",
-    "product_ids": [199,27],
-    "semantic_desc": "用户希望使用国产光学卫星数据进行遥感分析，这里指向高分一号 ARD 产品。"
-  },
-
-  {
-    "keyword": "武汉一号",
-    "product_ids": [345],
-    "semantic_desc": "用户指武汉大学研制的高分辨率遥感卫星数据，对应 0.5 米全色影像产品。"
+    "keyword": "surface reflectance",
+    "product_ids": [
+      199
+    ],
+    "semantic_desc": "The user wants preprocessed, analysis-ready surface-reflectance data, corresponding here to the GF-1 ARD product."
   },
   {
-    "keyword": "珞珈",
-    "product_ids": [345],
-    "semantic_desc": "用户口语中对珞珈系列卫星的简称，通常指武汉一号（珞珈三号02星）的高分辨率影像。"
+    "keyword": "chinese domestic satellite",
+    "product_ids": [
+      199,
+      27
+    ],
+    "semantic_desc": "The user wants domestic Chinese optical satellite data for remote-sensing analysis, here mainly pointing to Gaofen-1 ARD products."
   },
   {
-    "keyword": "0.5米影像",
-    "product_ids": [345],
-    "semantic_desc": "用户明确需要 0.5 米级高分辨率影像，用于精细制图、目标识别或应急监测。"
+    "keyword": "wuhan-1",
+    "product_ids": [
+      345
+    ],
+    "semantic_desc": "The user refers to high-resolution Wuhan-1 satellite data, corresponding to 0.5 m panchromatic imagery."
   },
   {
-    "keyword": "全色影像",
-    "product_ids": [345],
-    "semantic_desc": "用户希望获取高空间分辨率的全色光学影像，这里对应武汉一号 0.5 米全色产品。"
+    "keyword": "luojia",
+    "product_ids": [
+      345
+    ],
+    "semantic_desc": "A colloquial reference to the Luojia satellite series, usually Wuhan-1 / Luojia-3 02 high-resolution imagery."
+  },
+  {
+    "keyword": "0.5m imagery",
+    "product_ids": [
+      345
+    ],
+    "semantic_desc": "The user explicitly requests 0.5 m high-resolution imagery for fine mapping, target recognition, or emergency monitoring."
+  },
+  {
+    "keyword": "panchromatic imagery",
+    "product_ids": [
+      345
+    ],
+    "semantic_desc": "The user wants high-spatial-resolution panchromatic optical imagery, corresponding here to Wuhan-1 0.5 m panchromatic products."
   }
 ]

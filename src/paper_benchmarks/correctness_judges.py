@@ -27,7 +27,6 @@ OUT_DIRNAME = "correctness_judgements"
 
 # Prompt paths (place them under prompts/judge/ yourself)
 PROMPT_SYSTEM = "paper_benchmarks/judge_prompts/system_prompt.md"
-# PROMPT_USER = "paper_benchmarks/judge_prompts/user_prompt.md"
 PROMPT_USER_SEMANTIC = "paper_benchmarks/judge_prompts/user_prompt_semantic.md"
 PROMPT_USER_FULFILLMENT = "paper_benchmarks/judge_prompts/user_prompt_fulfillment.md"
 PROMPT_USER_PARAM = "paper_benchmarks/judge_prompts/user_prompt_param.md"

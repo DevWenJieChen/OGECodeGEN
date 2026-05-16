@@ -161,41 +161,6 @@ def build_action_whitelist(has_modules: Dict[str, bool]) -> List[str]:
     return "\n".join(f"- {a}" for a in actions)
 
 
-# def _call_llm(llm: ChatLLMClient, system_prompt: str, user_prompt: str) -> str:
-#     """
-#     Adapter layer: different projects may use different ChatLLMClient method names.
-#     Align the existing client invocation style here.
-#
-#     Try common method names below:
-#     - llm.chat(system, user)
-#     - llm.invoke(messages=[...])
-#     - llm.generate(system_prompt=..., user_prompt=...)
-#     """
-#     # 1) chat(system, user)
-#     if hasattr(llm, "chat") and callable(getattr(llm, "chat")):
-#         return llm.chat(system_prompt, user_prompt)
-#
-#     # 2) invoke(messages=[...])
-#     if hasattr(llm, "invoke") and callable(getattr(llm, "invoke")):
-#         messages = [
-#             {"role": "system", "content": system_prompt},
-#             {"role": "user", "content": user_prompt},
-#         ]
-#         resp = llm.invoke(messages)
-#         # Support different response formats.
-#         if isinstance(resp, str):
-#             return resp
-#         if isinstance(resp, dict) and "content" in resp:
-#             return str(resp["content"])
-#         return str(resp)
-#
-#     # 3) generate(system_prompt=..., user_prompt=...)
-#     if hasattr(llm, "generate") and callable(getattr(llm, "generate")):
-#         return llm.generate(system_prompt=system_prompt, user_prompt=user_prompt)
-#
-#     raise AttributeError("ChatLLMClient does not provide chat/invoke/generate; please adapt _call_llm().")
-
-
 class DecisionThinker:
     """
     LLM-based next-action decision maker.

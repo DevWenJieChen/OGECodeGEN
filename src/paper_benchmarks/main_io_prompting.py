@@ -102,9 +102,9 @@ def run_iop(*, user_query: str, query_lang: str, cfg:dict, data_info: str) -> Pi
 
 if __name__ == "__main__":
     print(os.getcwd())
-    user_query = "请基于指定的时间范围和空间范围获取一批DEM影像，把它们合成一张连续影像并生成地形阴影效果进行展示。"
-    query_lang = "zh"
-    data_info = "ASTER_GDEM_DEM30 影像集合（时间：2000-01-01 00:00:00；范围：[108.5, 18.1, 111, 20.1]）"
+    user_query = "Please obtain a batch of DEM images based on the specified time range and spatial range, merge them into a continuous image, and generate a terrain shading effect for display."
+    query_lang = "en"
+    data_info = "ASTER_GDEM_DEM30 image collection (time: 2000-01-01 00:00:00; range: [108.5, 18.1, 111, 20.1])"
     iop_cfg = load_config("src/paper_benchmarks/configs/config_iop.yaml")
     pls = run_iop(user_query=user_query, query_lang=query_lang,cfg=iop_cfg, data_info=data_info)
     print(pls)

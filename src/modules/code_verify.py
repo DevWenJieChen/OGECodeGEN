@@ -11,11 +11,6 @@ from typing import Dict, Any, Optional, List
 
 from src.core.pipeline_state import PipelineState
 
-
-# Subprocess execution template (concise):
-# - Purpose: run generated code in an isolated process (assuming the oge package is installed) to avoid polluting or crashing the parent process.
-# - Success: a normal exit (0) outputs the dag string to the console, allowing the generated code's stdout to pass through unchanged (the parent process directly reads stdout).
-# - Failure: output one JSON line (structured error information)
 _WRAPPER = r"""
 import sys
 import json

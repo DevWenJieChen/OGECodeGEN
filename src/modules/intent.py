@@ -116,34 +116,6 @@ def _safe_load_json(text: str, dump_prefix: str = "intent") -> Dict[str, Any]:
         f"raw_head={text[:1000]!r}"
     )
 
-# def _extract_first_json_object(text: str) -> Optional[str]:
-#     """
-#     Try to extract the first {...} JSON object from the model output (to handle occasional extra text from the model).
-#     This is not a strict parser, but it is effective when noise appears before or after the JSON.
-#     """
-#     if not text:
-#         return None
-#     start = text.find("{")
-#     end = text.rfind("}")
-#     if start == -1 or end == -1 or end <= start:
-#         return None
-#     return text[start : end + 1]
-# 
-# def _safe_load_json(text: str) -> Dict[str, Any]:
-#     """
-#     Robust JSON parsing: first try loading the full text; if that fails, extract {...} and load it.
-#     Note: if your prompt examples use the Chinese comma "，", the JSON will be invalid. This function does not force-fix punctuation,
-#     so it is recommended to replace "，" with "," in the examples.
-#     """
-#     text = (text or "").strip()
-#     try:
-#         return json.loads(text)
-#     except Exception:
-#         candidate = _extract_first_json_object(text)
-#         if not candidate:
-#             raise
-#         return json.loads(candidate)
-
 
 
 def run(pls: PipelineState, llm: ChatLLMClient) -> PipelineState:
@@ -155,9 +127,6 @@ def run(pls: PipelineState, llm: ChatLLMClient) -> PipelineState:
         user_query=pls.user_query,
         user_lang = pls.lang
     )
-    # pls.intent_json = llm.invoke(system_prompt=system_prompts,user_prompt=user_prompts)
-    # raw = llm.invoke(system_prompt=system_prompts, user_prompt=user_prompts)
-    # obj = _safe_load_json(raw)
 
     try:
         obj_model = llm.invoke_structured(

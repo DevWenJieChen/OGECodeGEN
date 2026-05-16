@@ -261,8 +261,8 @@ def run_oge_coder_2(*, user_query: str, query_lang: str, cfg: dict, data_info: s
 
 if __name__ == "__main__":
     # print(os.getcwd())
-    user_query = "使用Landsat数据计算武汉地区的NDWI。"
-    query_lang = "zh"
+    user_query = "Use Landsat data to calculate NDWI for the Wuhan area."
+    query_lang = "en"
     ours_cfg = load_config("config.yaml")
     woIU_cfg = load_config("src/paper_benchmarks/configs/config_woIU.yaml")
     woKR_cfg = load_config("src/paper_benchmarks/configs/config_woKR.yaml")

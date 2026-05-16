@@ -8,14 +8,6 @@ from src.modules import intent, retrieval_data, retrieval_knowledge, codegen, co
 from src.tools.milvus_store import MilvusVectorStore
 from src.react_modules.decision_thinker import DecisionThinker, Decision, ALLOWED_ACTIONS
 
-# Action = Literal[
-#     "RUN_INTENT",
-#     "RUN_RETRIEVAL_DATA",
-#     "RUN_RETRIEVAL_KNOWLEDGE",
-#     "RUN_CODEGEN",
-#     "RUN_VERIFY",
-#     "STOP",
-# ]
 StepCallback = Callable[[Dict[str, Any]], None]
 
 def _parse_verify_report_json(verify_report: Optional[str]) -> Dict[str, Any]:
@@ -203,27 +195,10 @@ class ReActController:
                     if on_step:
                         on_step({"type": "react_stop", "fix_iter": i, "reason": decision.reason if pls.lang=="zh" else decision.reason_en})
                     return pls
-                # before = {
-                #     "has_intent": bool(pls.intent_json),
-                #     "data_docs_count": len(pls.data_docs or []),
-                #     "knowledge_keys": list((pls.knowledge_docs or {}).keys()),
-                #     "has_code": bool(pls.code),
-                #     "verify_ok": pls.verify_ok,
-                #     "error_signature": sig,
-                # }
 
                 pls = self._dispatch_action(pls, act, decision.params)
                 if act == "RUN_CODEGEN":
                     codegen_happened = True
-
-                # after = {
-                #     "has_intent": bool(pls.intent_json),
-                #     "data_docs_count": len(pls.data_docs or []),
-                #     "knowledge_keys": list((pls.knowledge_docs or {}).keys()),
-                #     "has_code": bool(pls.code),
-                #     "verify_ok": pls.verify_ok,
-                #     "error_signature": _error_signature(pls),
-                # }
 
                 step_item = {
                     "type": "react_step",
@@ -289,14 +264,6 @@ class ReActController:
             actions = [actions]
         sanitized_actions = []
 
-        # ALLOWED_ACTIONS = {
-        #     "RUN_INTENT",
-        #     "RUN_RETRIEVAL_DATA",
-        #     "RUN_RETRIEVAL_KNOWLEDGE",
-        #     "RUN_CODEGEN",
-        #     "RUN_VERIFY",
-        #     "STOP",
-        # }
         for action in actions:
             # ---- Action whitelist. ----
             if action not in ALLOWED_ACTIONS:

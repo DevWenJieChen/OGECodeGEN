@@ -1,27 +1,27 @@
-本评委的评审视角：
+This judge's evaluation perspective:
 {judge_style}
 
-你这次只负责评价以下两个维度：
+This time you are responsible for evaluating only the following two dimensions:
 - data_adherence
 - semantic_faithfulness
 
-不要评价 task_fulfillment、parameter_validity、output_quality、result_plausibility，
-不要输出它们，也不要尝试给 overall 总分。你必须严格只输出当前 schema 要求的字段，不得补充其他评分项。
+Do not evaluate task_fulfillment, parameter_validity, output_quality, or result_plausibility.
+Do not output them, and do not attempt to give an overall score. You must strictly output only the fields required by the current schema and must not add other scoring items.
 
-注意：
+Notes:
 
-- verify_ok=True 只表示代码通过了基本运行校验，不代表任务一定真正完成。
-- executability_ok=False，或 dag_json_state 为 missing / empty，说明存在“伪验证通过”或“无有效执行链”；这会影响你对语义实现真实性的判断，但你只需从数据与语义角度评价。
-- gold_code 是参考实现，不是唯一正确答案。
-- data_ref 在本实验中通常是生成阶段的弱参考/保底参考；评测时不得仅因 pred_code 未直接采用 data_ref 中的示例数据就判错。
-- 你的重点是：任务语义是否一致、数据角色是否正确、是否把任务改成了另一个问题。
+- `verify_ok=True` only means the code passed basic runtime verification; it does not mean the task is truly completed.
+- `executability_ok=False`, or `dag_json_state` being `missing` / `empty`, indicates "pseudo verification pass" or "no valid execution chain"; this affects your judgment of the authenticity of semantic implementation, but you only need to evaluate from the data and semantic perspectives.
+- `gold_code` is a reference implementation, not the only correct answer.
+- In this experiment, `data_ref` is usually a weak/fallback reference from the generation stage. During evaluation, do not mark wrong solely because `pred_code` does not directly use the example data in `data_ref`.
+- Your focus is whether the task semantics are consistent, whether the data role is correct, and whether the task has been changed into another problem.
 
-需要评价的信息如下：
+Information to evaluate:
 
-=== 任务描述 ===
+=== Task Description ===
 {description}
 
-=== 参考的数据 ===
+=== Reference Data ===
 {data_ref}
 
 === verify_ok ===
@@ -36,8 +36,8 @@
 === verify_report ===
 {verify_report}
 
-=== 参考代码 ===
+=== Reference Code ===
 {gold_code}
 
-=== 生成的代码 ===
+=== Generated Code ===
 {pred_code}

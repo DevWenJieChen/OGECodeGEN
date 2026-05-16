@@ -1,25 +1,24 @@
-用户问题：
+User question:
 {user_query}
 
 
 
-相关任务知识（仅供参考，可能不完全匹配当前任务）：
+Related task knowledge (for reference only; it may not fully match the current task):
 {task_knowledge_hint}
 
 
 
-请基于**用户问题本身**，并在必要时参考上述任务知识，
-规划/拆解为一个“通用层面”的步骤。
+Based on **the user question itself**, and referring to the task knowledge above only when necessary,
+plan/decompose it into "general-level" steps.
 
-再次强调：
-- 不要写具体波段名、产品名、coverageID、API 参数
-- 不要写实现细节或代码逻辑
-- 只输出严格 JSON
+Reminder:
+- Do not write specific band names, product names, coverageID values, or API parameters
+- Do not write implementation details or code logic
+- Output strict JSON only
 
 
 
-输出格式：
+Output format:
 {{
-  "steps": ["步骤1", "步骤2", "..."]
+  "steps": ["Step 1", "Step 2", "..."]
 }}
-

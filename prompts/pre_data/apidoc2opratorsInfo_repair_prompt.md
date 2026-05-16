@@ -1,12 +1,11 @@
-下面文本本意是 JSON，但可能包含多余字符或不合法格式。
-请把它修复为“严格合法 JSON”，并且只输出 JSON（不能输出任何解释或 Markdown）。
+The following text is intended to be JSON, but it may contain extra characters or invalid formatting.
+Repair it into **strictly valid JSON** and output only JSON (do not output any explanation or Markdown).
 
-修复原则（保守）：
-- 尽量保留原意与信息，不要新增字段内容，不要编造。
-- 若存在多个 JSON 片段：选择信息最完整且结构合理的那个。
+Repair principles (conservative):
+- Preserve the original meaning and information as much as possible. Do not add field content or fabricate anything.
+- If multiple JSON fragments exist, choose the one with the most complete information and reasonable structure.
 
-文本如下：
+Text:
 ```json
 {bad_text}
 ```
-

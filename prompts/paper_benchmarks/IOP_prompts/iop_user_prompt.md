@@ -1,35 +1,35 @@
-### 【用户问题】
+### [User Question]
 
 {user_query}
 
 ==================================================
 
-### 【可用数据】
+### [Available Data]
 
-说明：下面是可用的数据产品信息，包含：
+Description: The following is the available data product information, including:
 
-- coverageID：字符串字面量，某景影像的标识（例如：LC08_L1GT_121039_20240325_20240403_02_T2）
-- productID：字符串字面量，产品名称（例如 "LC08_C02_L1"）
+- coverageID: string literal, the identifier of a scene/image (for example: LC08_L1GT_121039_20240325_20240403_02_T2)
+- productID: string literal, the product name (for example `"LC08_C02_L1"`)
 
 {data_info}
 
 ==================================================
 
-### 【用户问题的语言】
+### [Language of the User Question]
 
-说明：en是英文，zh是中文。
+Description: `en` means English, and `zh` means Chinese.
 LANG:
 {user_lang}
 
 ==================================================
 
-### 【代码生成任务说明】
+### [Code Generation Task Instructions]
 
-请完成以下工作：
+Complete the following:
 
-1) 结合【可用数据】,选择合适的数据读取方式。
-   - 其余可替代的数据读取方式也可以写出来，但必须注释起来，这样方便自己切换。
-2) 当用户语言LANG是en的时候，要面向英文用户，注释要写成英文的；否则默认中文注释
-3) 代码不要写得过度复杂，以清晰直观为优先；不要影响代码的语法检查与安全校验。
+1) Choose a suitable data reading method based on [Available Data].
+   - Other alternative data reading methods may also be written, but they must be commented out so that users can switch later.
+2) When LANG is `en`, write comments for English-speaking users in English; otherwise, use Chinese comments by default.
+3) Do not make the code overly complex. Prioritize clarity and directness, and do not compromise syntax checking or safety validation.
 
-请按照要求，只输出最终的OGE代码。
+Output only the final OGE code according to the requirements.

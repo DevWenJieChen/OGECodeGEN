@@ -1,80 +1,79 @@
-### 【修复目标】
+### [Repair Objective]
 
-你需要根据 fix_instruction对previous_code做最小必要修改，使其通过验证（修复 verify_report 暴露的问题）。
+You need to make the minimum necessary modifications to `previous_code` according to `fix_instruction`, so that it passes verification by fixing the issues exposed by `verify_report`.
 
 ---
 
-### 【A.本轮修复信息（最高优先级）】
+### [A. Current Repair Information (highest priority)]
 
-1) fix_instruction（优先参考）：
+1) fix_instruction (primary reference):
 {fix_instruction}
 
-2) verify_report（错误依据，必须优先满足）：
+2) verify_report (error basis; must be satisfied first):
 {verify_report}
 
-3) previous_code（必须基于它做最小改动）：
+3) previous_code (must be minimally modified based on it):
 ```python
 {previous_code}
 ```
 
 ---
 
-### 【B.背景任务上下文（用于保持目标不跑偏，不能用于推倒重写）】
+### [B. Background Task Context (used to keep the target aligned; not for rewriting from scratch)]
 
-1.用户问题
+1. User question
 
 {user_query}
 
 ---
-2.任务意图（只作为目标，不是逐字照抄）
+2. Task intent (only as the target, not to copy verbatim)
 
-intent_json：
+intent_json:
 {intent_json}
 
 ---
-3.数据检索建议（数据读取约束；涉及波段/数据读取方式必须以此为准）
+3. Data retrieval recommendations (data reading constraints; band/data reading methods must follow this)
 
-data_recommendations：
+data_recommendations:
 {data_recommendations}
 
 ---
-### 【C.知识依据（用于修复时选择/补齐算子；注意优先级与使用规则）】
+### [C. Knowledge Basis (used to select/complete operators during repair; note priority and usage rules)]
 
-使用规则（强约束）：
+Usage rules (strict constraints):
 
-- 你必须优先使用“ 1”中提供的新增算子/案例来修复本轮错误（如果 delta 非空）。
-- “2”仅作为背景候选集合与约束补充，避免遗漏关键限制；不要因为 full 中有别的方案就推倒重写。
-- 若 delta 与 full 在建议上不一致：以 delta 为准；但不得违反 data_recommendations 与语法规则。
-- 若 delta 为空：再使用 full。
+- You must prioritize the new operators/cases provided in "1" to repair the current error (if delta is non-empty).
+- "2" is only the background candidate set and constraint supplement, to avoid missing key restrictions; do not rewrite from scratch just because `full` contains another approach.
+- If delta and full are inconsistent in recommendations: use delta as the source of truth; however, do not violate `data_recommendations` or syntax rules.
+- If delta is empty: then use full.
 
-##### 1.本轮新增知识 delta（优先使用；可能为空）
+##### 1. Current newly added knowledge delta (use first; may be empty)
 
-任务知识（delta，最近一次新增）：
+Task knowledge (delta, most recent addition):
 {task_knowledge_delta}
 
-算子知识（delta，最近一次新增）：
+Operator knowledge (delta, most recent addition):
 {operator_knowledge_delta}
 
-##### 2.全量知识 full（仅做背景参考；已做截断）
+##### 2. Full knowledge (background reference only; truncated)
 
-任务知识（full 预览）：
+Task knowledge (full preview):
  {task_knowledge_full_preview}
 
-算子知识（full 预览）：
+Operator knowledge (full preview):
  {operator_knowledge_full_preview}
 
 ---
-### 【D.修复任务（输出要求）】
+### [D. Repair Task (output requirements)]
 
- 请基于上述信息，对 previous_code 做最小必要修改以修复错误。用户语言模式是LANG={user_lang}
+Based on the information above, make the minimum necessary modifications to `previous_code` to fix the error. The user language mode is LANG={user_lang}
 
-- 仅修复：不要无关扩展；不要新增与修复无关的处理步骤。
-- 最小改动：尽量保留 previous_code 的结构与变量命名。
-- 若需要替换某个 API 参数/算子调用：只改动该局部，并保证整体代码仍可运行。
-- 当用户语言模式LANG为en的时候，说明是英文模式（仅面向用户展示，但是相关知识与内部流程逻辑还是以中文为主），代码中的注释需要是英文的；否则默认是中文模式
-- 只输出最终修复后的 OGE 代码正文；不要解释、不要 Markdown、不要 JSON。
+- Repair only: do not add unrelated extensions, and do not add processing steps unrelated to the repair.
+- Minimum change: preserve the structure and variable names of `previous_code` as much as possible.
+- If an API parameter/operator call needs to be replaced: change only that local part and ensure the overall code remains runnable.
+- When LANG is `en`, this is English mode only for user-facing content; related knowledge and internal workflow logic should still mainly follow Chinese, while comments in the code should be in English. Otherwise, use Chinese mode by default.
+- Output only the final repaired OGE code body. Do not output explanations, Markdown, or JSON.
 
 
 
-请按照要求，修复代码，必须只输出纯OGE代码正文，不得输出任何解释、标题、说明、前后缀，不得将代码放入Markdown代码块。
-
+According to the requirements, repair the code and output only the raw OGE code body. Do not output any explanations, titles, notes, prefixes, or suffixes, and do not put the code in a Markdown code block.

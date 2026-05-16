@@ -1,89 +1,89 @@
-### 【用户问题】
+### [User Question]
 
 {user_query}
 
 ==================================================
 
-### 【意图理解结果（任务意图，JSON 字符串）】
+### [Intent Understanding Result (task intent, JSON string)]
 
-说明：下面是上游“意图理解模块”输出的结构化结果（一般为JSON 字符串）；用于明确任务目标、对象、时空约束等。
+Description: The following is the structured output from the upstream "intent understanding module" (usually a JSON string). It is used to clarify task objectives, target objects, spatiotemporal constraints, etc.
 INTENT JSON:
 {intent_json}
 
 ==================================================
 
-### 【数据检索结果（数据读取建议）】
+### [Data Retrieval Result (data reading recommendations)]
 
-说明：下面是上游“数据检索模块”输出的推荐结果（一般为JSON 字符串）；每条推荐对应一个候选数据产品，包含：
+Description: The following is the recommendation result from the upstream "data retrieval module" (usually a JSON string). Each recommendation corresponds to a candidate data product and includes:
 
 - product_id / product_name
-- sample_data_text（若能确定具体 coverageID，则给出 getCoverage 方案）
-- collection_data_text（兜底方案：getCoverageCollection 等）
-- bands（数据产品的波段信息）
+- sample_data_text (a `getCoverage` scheme if a concrete coverageID can be determined)
+- collection_data_text (fallback scheme such as `getCoverageCollection`)
+- bands (band information for the data product)
 
 DATA RECOMMENDATIONS:
 {data_recommendations}
 
 ==================================================
 
-### 【任务知识（案例/经验参考，不是规划结果）】
+### [Task Knowledge (case/experience reference, not the planning result)]
 
-说明：下面是“知识检索模块”检索到与当前任务相似的案例/经验性知识，用于提供可能的处理步骤顺序与方法参考；需结合意图与数据约束取舍。
+Description: The following is case/experience knowledge retrieved by the "knowledge retrieval module" that is similar to the current task. It can provide possible processing-step order and method references, but must be selected and adapted according to the intent and data constraints.
 TASK KNOWLEDGE (REFERENCE):
 {task_knowledge}
 
 ==================================================
 
-### 【任务步骤参考（通用步骤，不是实现细节）】
+### [Task-Step Reference (general steps, not implementation details)]
 
-说明：这是知识检索模块，在算子检索时给出的“任务拆解”后的通用步骤列表，仅用于帮助组织处理链结构顺序。
-强约束：
+Description: This is the general step list produced by the knowledge retrieval module during operator retrieval after task decomposition. It is only used to help organize the structure and order of the processing chain.
+Strict constraints:
 
-- 步骤不可作为硬编码实现依据
-- 严禁从步骤推断或写死任何具体代码参数，例如波段编号/名称/算子API 等
+- Steps must not be used as a basis for hard-coded implementation
+- Do not infer or hard-code any concrete code parameters from the steps, such as band numbers/names/operator APIs
 
 TASK STEPS (REFERENCE):
 {task_steps}
 
 ==================================================
 
-### 【算子知识（候选算子集合）】
+### [Operator Knowledge (candidate operator set)]
 
-说明：下面是检索到的可能相关算子知识，包含算子名称、功能说明、输入输出与关键参数提示。
-你只能在这些候选算子中选择与组合，**严禁凭空创造新算子**。
+Description: The following is the retrieved potentially relevant operator knowledge, including operator names, function descriptions, inputs/outputs, and key parameter hints.
+You may only select and compose from these candidate operators. **Creating new operators out of thin air is strictly prohibited.**
 
 OPERATOR KNOWLEDGE (CANDIDATES):
 {operator_knowledge}
 
 ==================================================
 
-### 【用户问题的语言】
+### [Language of the User Question]
 
-说明：en是英文，zh是中文。
+Description: `en` means English, and `zh` means Chinese.
 LANG:
 {user_lang}
 
 ==================================================
 
-### 【代码生成任务说明】
+### [Code Generation Task Instructions]
 
-请完成以下工作：
+Complete the following:
 
-1) 结合 INTENT JSON 与 DATA RECOMMENDATIONS，选择合适的数据读取方式。
-   - 其余可替代的数据读取方式必要的情况下。
-2) 参考 TASK STEPS 与 TASK KNOWLEDGE 组织处理链（可适配、可简化），确保数据流清晰：
-   - 变量命名清晰、上一步输出作为下一步输入
-   - 关键步骤添加注释（如数据加载、裁剪/掩膜、指数计算、统计分析、导出/渲染）
-   - 仅选择与 description 明确要求相关的步骤；未要求的处理（例如额外指数、额外统计、额外导出）一律不做
-3) 当用户语言LANG是en的时候，要面向英文用户，注释要写成英文的；否则默认中文注释
-4) 在 OPERATOR KNOWLEDGE 候选算子集合中选择合适算子实现关键步骤：
-   - 不得使用候选集合外的算子名称
-   - 优先选择与当前数据产品/数据类型匹配、并能满足任务目标的算子。
-   - 若候选集合不足以实现某步骤，先尝试组合；仍不行则用简短中文注释说明能力缺口，严禁写自己猜测的算子。
-   - 算子参数含义、输入输出结构，以算子知识库定义为准。
-5) 代码不要写得过度复杂，以清晰直观为优先；不要影响代码的语法检查与安全校验。
-6) 注释一定写的要简洁，不能写很多内容。
-7) 波段信息必须严格以 DATA RECOMMENDATIONS给出的bands为准，否则会运行失败。
-8) 整体代码一定要严格按照任务要求的内容生成，按照最小充分原则，只实现满足任务的最小必要步骤；不要额外扩展指数、额外可视化、额外导出、额外解释性代码等。
+1) Choose a suitable data reading method by combining INTENT JSON and DATA RECOMMENDATIONS.
+   - Other alternative data reading methods may be mentioned only when necessary.
+2) Use TASK STEPS and TASK KNOWLEDGE to organize the processing chain (adapt or simplify as needed), ensuring a clear data flow:
+   - Use clear variable names; the output of the previous step should be the input of the next step
+   - Add comments for key steps (such as data loading, clipping/masking, index calculation, statistical analysis, export/rendering)
+   - Select only steps explicitly required by the description; do not perform unrequested processing (such as extra indices, extra statistics, or extra exports)
+3) When LANG is `en`, write comments for English-speaking users in English; otherwise, use Chinese comments by default.
+4) Select suitable operators from the OPERATOR KNOWLEDGE candidate set to implement key steps:
+   - Do not use operator names outside the candidate set
+   - Prefer operators that match the current data product/data type and satisfy the task objective
+   - If the candidate set is insufficient for a step, first try composition; if still impossible, use a brief Chinese comment to describe the capability gap, and never write guessed operator names
+   - Operator parameter semantics and input/output structures must follow the operator knowledge base definitions
+5) Do not make the code overly complex. Prioritize clarity and directness, and do not compromise syntax checking or safety validation.
+6) Comments must be concise and not verbose.
+7) Band information must strictly follow the `bands` field in DATA RECOMMENDATIONS; otherwise execution may fail.
+8) The whole code must strictly follow the task requirements. Follow the minimum-sufficient principle: implement only the minimal necessary steps that satisfy the task; do not add extra indices, extra visualizations, extra exports, extra explanatory code, etc.
 
-请按照要求，必须只输出纯OGE代码正文，不得输出任何解释、标题、说明、前后缀，不得将代码放入Markdown代码块。
+Output only the raw OGE code body according to the requirements. Do not output explanations, titles, notes, prefixes, or suffixes, and do not wrap the code in a Markdown code block.

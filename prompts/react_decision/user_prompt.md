@@ -1,33 +1,32 @@
-### 当前信息
+### Current Information
 
-- observation：当前 PipelineState 的摘要信息（含 verify_report）
-- history：最近执行历史（最多最近 6 条）
-- lang：用户的语言模式（默认zh，zh为中文，en为英文）
+- observation: summary information of the current PipelineState (including verify_report)
+- history: recent execution history (up to the most recent 6 records)
+- lang: user's language mode (default zh; zh means Chinese, en means English)
 
-【observation】
+[observation]
 {observation}
 
-【history】
+[history]
 {history}
 
-【lang】
+[lang]
 {user_lang}
 
-【本次修复的action白名单】
-本次修复中，允许的 ACTION 白名单：
+[Action whitelist for this repair]
+Allowed ACTION whitelist for this repair:
 {allow_actions}
 
 
 
-### 任务要求
+### Task Requirements
 
-- 判断当前属于哪种错误类型（语法/参数/API/缺算子/缺数据/不确定）
-- 输出下一次修复尝试（repair attempt）的 actions（单个或序列，必须是本次修复的）
-- 输出必要的 params（遵循系统提示词的约束）
-- 输出简短的reason
-- reason一定是中文的，但如果用户的语言模式lang是en，请增加一个reason_en字段，这个字段的内容是reason字段的英文版。
+- Determine the current error type (syntax / parameter / API / missing operator / missing data / uncertain)
+- Output the actions for the next repair attempt (single action or sequence; must be from this repair's whitelist)
+- Output necessary params (following the system prompt constraints)
+- Output a brief `reason`
+- `reason` must be in Chinese. If the user's language mode `lang` is `en`, add a `reason_en` field whose content is the English version of the `reason` field.
 
 
 
-请只输出一个严格 JSON 对象，禁止输出其他任何内容。
-
+Output only one strict JSON object. Do not output anything else.

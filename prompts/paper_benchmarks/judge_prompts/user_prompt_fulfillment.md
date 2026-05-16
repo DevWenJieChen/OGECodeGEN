@@ -1,23 +1,23 @@
-本评委的评审视角：
+This judge's evaluation perspective:
 {judge_style}
 
-你这次只负责评价以下两个维度：
+This time you are responsible for evaluating only the following two dimensions:
 - task_fulfillment
 - output_quality
 
-不要评价 data_adherence、semantic_faithfulness、parameter_validity、result_plausibility，
-不要输出它们，也不要尝试给 overall 总分。你必须严格只输出当前 schema 要求的字段，不得补充其他评分项。
+Do not evaluate data_adherence, semantic_faithfulness, parameter_validity, or result_plausibility.
+Do not output them, and do not attempt to give an overall score. You must strictly output only the fields required by the current schema and must not add other scoring items.
 
-注意：
+Notes:
 
-- verify_ok=True 只表示代码通过了基本运行校验，不代表任务一定真正完成。
-- executability_ok=False，或 dag_json_state 为 missing / empty，通常意味着代码没有形成有效处理链；这类情况不得按“任务基本完成”处理。
-- gold_code 是参考实现，不是唯一正确答案。
-- 你的重点是：任务是否真正闭环完成，是否产出了用户可用的最终结果。
+- `verify_ok=True` only means the code passed basic runtime verification; it does not mean the task is truly completed.
+- `executability_ok=False`, or `dag_json_state` being `missing` / `empty`, usually means the code did not form a valid processing chain. Such cases must not be treated as "the task is basically completed".
+- `gold_code` is a reference implementation, not the only correct answer.
+- Your focus is whether the task is truly completed end-to-end and whether it produces a final result usable by the user.
 
-需要评价的信息如下：
+Information to evaluate:
 
-=== 任务描述 ===
+=== Task Description ===
 {description}
 
 === verify_ok ===
@@ -32,8 +32,8 @@
 === verify_report ===
 {verify_report}
 
-=== 参考代码 ===
+=== Reference Code ===
 {gold_code}
 
-=== 生成的代码 ===
+=== Generated Code ===
 {pred_code}

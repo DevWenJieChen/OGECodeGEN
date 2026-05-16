@@ -1,15 +1,15 @@
-### 【修复目标】
+### [Repair Objective]
 
-你需要根据 verify_report对previous_code做最小必要修改，使其通过验证（修复 verify_report 暴露的问题）。
+You need to make the minimum necessary modifications to `previous_code` according to `verify_report`, so that it passes verification by fixing the issues exposed by `verify_report`.
 
 ---
 
-### 【A.本轮修复信息（最高优先级）】
+### [A. Current Repair Information (highest priority)]
 
-1) verify_report（错误依据，必须优先满足）：
+1) verify_report (error basis; must be satisfied first):
   {verify_report}
 
-2) previous_code（必须基于它做最小改动）：
+2) previous_code (must be minimally modified based on it):
 
 ```python
 {previous_code}
@@ -17,25 +17,24 @@
 
 ---
 
-### 【B.背景任务上下文（用于保持目标不跑偏，不能用于推倒重写）】
+### [B. Background Task Context (used to keep the target aligned; not for rewriting from scratch)]
 
-1.用户问题
+1. User question
 
 {user_query}
 
 ---
-2.数据建议
+2. Data recommendations
 {data_info}
 
 ---
 ---
-### 【D.修复任务（输出要求）】
+### [D. Repair Task (output requirements)]
 
- 请基于上述信息，对 previous_code 做最小必要修改以修复错误。用户语言模式是LANG={user_lang}
+Based on the information above, make the minimum necessary modifications to `previous_code` to fix the error. The user language mode is LANG={user_lang}
 
-- 仅修复：不要无关扩展；不要新增与修复无关的处理步骤。
-- 最小改动：尽量保留 previous_code 的结构与变量命名。
-- 若需要替换某个 API 参数/算子调用：只改动该局部，并保证整体代码仍可运行。
-- 当用户语言模式LANG为en的时候，说明是英文模式（仅面向用户展示，但是相关知识与内部流程逻辑还是以中文为主），代码中的注释需要是英文的；否则默认是中文模式
-- 只输出最终修复后的 OGE 代码；不要解释、不要 Markdown、不要 JSON，修改的地方用注释写一下原因。
-
+- Repair only: do not add unrelated extensions, and do not add processing steps unrelated to the repair.
+- Minimum change: preserve the structure and variable names of `previous_code` as much as possible.
+- If an API parameter/operator call needs to be replaced: change only that local part and ensure the overall code remains runnable.
+- When LANG is `en`, this is English mode only for user-facing content; related knowledge and internal workflow logic should still mainly follow Chinese, while comments in the code should be in English. Otherwise, use Chinese mode by default.
+- Output only the final repaired OGE code. Do not output explanations, Markdown, or JSON. Add a comment near the modified location to explain the reason.
